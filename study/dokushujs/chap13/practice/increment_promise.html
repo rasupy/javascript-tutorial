@@ -1,0 +1,20 @@
+<script>
+    function promiseFactory(count) {
+        // 戻り値としてPromiseインスタンスを返す
+        return new Promise(resolve => {
+            setTimeout(() => {
+                console.log(count); // ログに表示
+                count += 2;   // 現在のカウントに2を足し合わせる
+                resolve(count); // 次のthenを実行
+
+            }, 1000);
+        });
+    }
+
+    promiseFactory(0) // 0からカウントをスタート
+        .then(count => { return promiseFactory(count); })
+        // .then( count => promiseFactory( count ) ) のように省略可能です。
+        .then(count => { return promiseFactory(count); })
+        .then(count => { return promiseFactory(count); });
+
+</script>

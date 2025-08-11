@@ -1,0 +1,21 @@
+<script>
+    // ①  郵便番号に一致
+    function zipCodeChecker(zipcode) {
+        console.log(/^\d{3}-\d{4}$/.test(zipcode));
+    }
+    zipCodeChecker("001-0012"); // true
+    zipCodeChecker("001-001"); // false
+    zipCodeChecker("2.2-3042"); // false
+    zipCodeChecker("wd3-2132"); // false
+    zipCodeChecker("124-56789"); // false
+
+
+    // ② Emailに一致
+    function emailChecker(email) {
+        console.log(/^[\w.\-]+@[\w\-]+\.[\w\.\-]+$/.test(email));
+    }
+    emailChecker("example000@gmail.com"); // true
+    emailChecker("example-0.00@gmail.com"); // true
+    emailChecker("example-0.00@ex.co.jp"); // true
+    emailChecker("example/0.00@ex.co.jp"); // false
+</script>

@@ -1,0 +1,25 @@
+<script>
+    // match(regex)
+    "babcde".match(/a(b)c(d)e/);
+
+    // matchAll(regex)
+    const it = "return request".matchAll(/re(\S+)/g);
+    for (const v of it) {
+        console.log(v);
+    }
+    // ["return", "turn", index: 0, ... ]
+    // ["request", "quest", index: 7, ... ]
+
+    // replace(regex, replaceStr)
+    "apple, lemon".replace(/([a-z]+), lemon/, "banana, $1");
+    // 結果　"banana, apple"
+
+    // search(regex)
+    "text".search(/a/); // 結果　-1
+    "hello, abc".search(/a/); // 結果　7
+
+    // split([separator[, limit]]) 
+    "return request response".split(/\s/);
+    // 空白で分割
+    // 結果　["return", "request", "response"]
+</script>

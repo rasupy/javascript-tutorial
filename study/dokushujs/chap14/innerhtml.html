@@ -1,0 +1,10 @@
+<div id="test"><span>Hello World</span></div>
+<script>
+    const testEl = document.querySelector("#test");
+    console.log(`innerHTML: ${testEl.innerHTML}`);
+    // > innerHTML: <span>Hello World</span>
+
+    setTimeout(() => {
+        testEl.innerHTML = "<h1>Good World</h1>";
+    }, 2000); // 2秒後に実行
+</script>

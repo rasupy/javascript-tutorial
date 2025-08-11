@@ -1,0 +1,17 @@
+<script>
+    function totalPrice(taxRate, ...productPrices) {
+        let sum = 0;
+
+        for (const price of productPrices) {
+            sum += price;
+        }
+
+        // 小数点以下の切り捨てにはMath.floor()を使用します。
+        return Math.floor((1 + taxRate / 100) * sum);
+    }
+
+    console.log(totalPrice(10, 100, 200, 300));
+    // > 660
+    console.log(totalPrice(8, 100, 200, 300, 400));
+    // > 1080
+</script>

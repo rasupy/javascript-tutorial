@@ -1,0 +1,17 @@
+<script>
+    let promResolve, promReject;
+
+    const prom = new Promise((resolve, reject) => {
+        promResolve = resolve;           // ---- resolveへの参照をpromResolveに保持
+        promReject = reject;             // ---- resolveへの参照をpromRejectに保持
+    });
+
+    console.log(prom);
+    // > Promise {<pending>}
+
+    promResolve('引数');                      
+    // promReject();
+
+    console.log(prom);
+    // > Promise {<fulfilled>: '引数'}
+</script>

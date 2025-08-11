@@ -1,0 +1,12 @@
+<script>
+    class Test {
+        hello() { console.log("こんにちは") };
+    }
+    const instance = new Test;
+    Test.prototype.hello();
+    // > こんにちは
+    instance.__proto__.hello();
+    // > こんにちは
+    instance.hello();
+    // > こんにちは
+</script>

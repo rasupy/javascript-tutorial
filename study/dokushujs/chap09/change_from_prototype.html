@@ -1,0 +1,10 @@
+<script>
+    class Test {
+        hello() { console.log("こんにちは") };
+    }
+    const instance = new Test;
+    // prototypeのhelloメソッドを上書き
+    Test.prototype.hello = function () { console.log("Hello") }
+    instance.hello();
+    // > Hello
+</script>

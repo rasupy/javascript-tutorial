@@ -1,0 +1,14 @@
+<script>
+    // 検索対象文字列
+    const targetString = "5341nb;g090-1234-5678f29q0g070-9876-5432nfw";
+    // 正規表現
+    const mobileNumPattern = /(070|080|090)-\d{4}-\d{4}/g;
+    // 一致を検索
+    const mobileNums = targetString.matchAll(mobileNumPattern);
+    // 取得された携帯番号をコンソールに表示
+    for (const mobileNum of mobileNums) {
+        console.log(mobileNum[0]);
+    }
+    // > 090-1234-5678
+    // > 070-9876-5432
+</script>

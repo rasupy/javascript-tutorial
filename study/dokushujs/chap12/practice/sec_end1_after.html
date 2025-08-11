@@ -1,0 +1,34 @@
+<script>
+    function genStep(min, max, step) {
+        let currentValue = min - step; // 初期値
+
+        return {
+            next() {
+                currentValue += step; // step分足し合わせ
+                if (currentValue > max) { // currentValueがmaxより大きいとき、反復終了
+                    return {
+                        done: true
+                    }
+                } else {
+                    return {
+                        done: false,
+                        value: currentValue
+                    }
+                }
+            }
+        }
+    }
+
+    const it = genStep(4, 10, 2);
+    let a = it.next();
+
+    while (!a.done) {
+        console.log(a.value);
+        a = it.next();
+    }
+    // > 4
+    // > 6
+    // > 8
+    // > 10
+
+</script>

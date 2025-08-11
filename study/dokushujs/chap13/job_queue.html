@@ -1,0 +1,14 @@
+<script>
+    // これはタスクキューに登録されたタスク
+    setTimeout(function task() { console.log("Taskの実行") });
+    // ジョブはタスクキューの前に実行される
+    Promise.resolve().then(function job1() { console.log("Job1の実行") });
+    // ジョブキューに登録されたジョブがすべて処理されるまで、タスクキューのタスクは実行されない
+    Promise.resolve().then(function job2() { console.log("Job2の実行") });
+    // 実行中のコンテキストを含むコールスタックが空になった
+    console.log("グローバルコンテキスト終了");
+    // > グローバルコンテキスト終了
+    // > Job1の実行
+    // > Job2の実行
+    // > Taskの実行
+</script>

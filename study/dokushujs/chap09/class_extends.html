@@ -1,0 +1,22 @@
+<script>
+    // 継承元クラス（親クラス）
+    class Parent {
+        constructor(value) {
+            this.parentProp = value;
+        }
+        parentMethod() {
+            console.log("親クラスのメソッド");
+        }
+    }
+    // 継承先クラス（子クラス）
+    class Child extends Parent { // extendsでParentクラスを継承
+        constructor(parentProp, childProp) {
+            super(parentProp); // 親クラスのコンストラクタを実行
+            this.childProp = childProp // 子クラス独自のプロパティを追加
+        }
+        childMethod() { // 子クラス独自のメソッドを追加
+            // 親のプロパティを取得
+            console.log(`子から親にアクセス[ ${this.parentProp} ]`);
+        }
+    }
+</script>

@@ -1,0 +1,37 @@
+<button>ランダム</button>
+<input id="val1" type="number" value="0"> + <input id="val2" type="number" value="0"> = <span id="answer">0</span>
+<script>
+    /* 問１の解答 */
+    const val1 = document.querySelector("#val1");
+    const val2 = document.querySelector("#val2");
+    const answer = document.querySelector("#answer");
+
+    function inputHandler() {
+        // 値を足し合わせてanswer要素に描写します。
+        answer.textContent = Number(val1.value) + Number(val2.value);
+    }
+
+    val1.addEventListener("input", inputHandler);
+    val2.addEventListener("input", inputHandler);
+
+    /* 問４の解答 */
+    // １～１０までのランダムな値を取得する関数
+    const rand1to10 = () => Math.floor(Math.random() * 10 + 1);
+    // ボタンを取得
+    const randBtn = document.querySelector("button");
+    // inputイベントを作成
+    const inputEvent = new Event("input");
+    // ランダムボタンにアクションを登録
+    randBtn.addEventListener("click", () => {
+        // input要素に対してランダム値を設定
+        val1.value = rand1to10();
+        val2.value = rand1to10();
+        // inputイベントの発火
+        val1.dispatchEvent(inputEvent);
+    });
+</script>
+<style>
+    input {
+        width: 50px;
+    }
+</style>

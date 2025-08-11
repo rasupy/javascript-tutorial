@@ -1,0 +1,13 @@
+<div>色は変わりません。</div>
+<button id="color">文字色の変更</button>
+<script>
+    const targetEl = document.querySelector("div");
+    const colorBtn = document.querySelector("#color");
+    function colorChange(event) {
+        targetEl.style.color = "#ff0000";
+    }
+    // アクションの登録
+    colorBtn.addEventListener("click", colorChange);
+    // アクションの解除（うまくいきます！）
+    colorBtn.removeEventListener("click", colorChange);
+</script>

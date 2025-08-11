@@ -1,0 +1,12 @@
+<script>
+    const set = new Set();
+    set.add(1); // setオブジェクトに値を追加（11.2節参照）
+    set.add(2);
+    set.add(3);
+    const convertedArray = Array.from(set);
+    console.log(convertedArray);
+    // > [1, 2, 3]
+    const map = new Map;
+    map.set(1, function () { console.log(this) });
+    console.log(map.get(1)());
+</script>

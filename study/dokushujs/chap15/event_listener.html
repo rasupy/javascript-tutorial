@@ -1,0 +1,22 @@
+<div>
+    <button id="minus">-</button>
+    <span id="number">0</span>
+    <button id="plus">+</button>
+</div>
+<script>
+    // 数値の初期化
+    let count = 0;
+    // Elementの取得
+    const number = document.querySelector("#number");
+    const plusBtn = document.querySelector("#plus");
+    const minusBtn = document.querySelector("#minus");
+
+    plusBtn.addEventListener("click", function (event) {
+        count++; // 数値を1加算する
+        number.textContent = count;
+    });
+    minusBtn.addEventListener("click", function (event) {
+        count--; // 数値を1減算する
+        number.textContent = count;
+    });
+</script>

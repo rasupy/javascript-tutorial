@@ -1,0 +1,9 @@
+<script>
+    Promise.reject("エラーの理由").catch(error => {
+        console.error(error);
+    });
+    // 実行中のコンテキストを含むコールスタックが空になった
+    console.log("グローバルコンテキスト終了");
+    // > グローバルコンテキスト終了
+    // > エラーの理由
+</script>

@@ -1,0 +1,49 @@
+<script>
+    function alphabetIterator(start = "a", end = "z") {
+        if (start > end) {
+            throw "開始文字は終了文字より前のアルファベットを選んでください。";
+        }
+
+        // アルファベットが１文字ずつ格納された配列を定義
+        // * splitはStringオブジェクトのメソッドで引数で指定された文字で文字列を分割し、配列として返却します。
+        // * なお、空文字（""）が渡された場合には文字列を一文字ずつ分割します。
+        const ALPHABET_ARRAY = "abcdefghijklmnopqrstuvwxyz".split("");
+        // ALPHABET_ARRAY = [ 'a', 'b', 'c', ..., 'z' ];
+
+        // startとendの文字を配列内で検索し、一致する要素の添字を取得
+        const startIndex = ALPHABET_ARRAY.indexOf(start);
+        const endIndex = ALPHABET_ARRAY.indexOf(end);
+
+        // 配列を指定の範囲で切り取り（endの文字も含めたいので+1する）
+        const targetAlphabet = ALPHABET_ARRAY.slice(startIndex, endIndex + 1);
+
+        return {
+            next() {
+                // 配列のshiftメソッドで配列の先頭から一つずつ要素を取り出す
+                // 取り出す要素がなくなったとき、shift()の戻り値はundefinedとなる。
+                const alphabet = targetAlphabet.shift();
+
+                return {
+                    // 取り出された要素をvalueとして返却
+                    value: alphabet,
+                    // alphabetがundefinedの時、trueを返却
+                    done: alphabet ? false : true,
+                }
+            }
+        }
+    }
+
+    const it = alphabetIterator("c", "e");
+    let nextValue = it.next();
+    while (!nextValue.done) { // --- doneがtrueの時、whileループを抜ける
+
+        console.log(nextValue);
+
+        // 次の値をnextValueに格納
+        nextValue = it.next();
+    }
+    // > { done: false, value: "c" }
+    // > { done: false, value: "d" }
+    // > { done: false, value: "e" }
+
+</script>

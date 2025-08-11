@@ -1,0 +1,15 @@
+<script>
+    const html = `<h1>見出し1</h1>
+<h2>見出し2</h2>
+<h3>見出し3</h3>
+<header>ヘッダー</header>`;
+
+    const matches = html.matchAll(/<(h[1-6])>(.+)<\/\1>/g);
+    for (const matched of matches) {
+        console.log(matched[2]);
+    }
+    // > 見出し１
+    // > 見出し２
+    // > 見出し３
+
+</script>

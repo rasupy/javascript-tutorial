@@ -1,0 +1,16 @@
+<script>
+    function Person(name) {
+        this.name = name;
+    }
+    // Personコンストラクタのprototypeオブジェクトのhelloプロパティに関数を登録
+    Person.prototype.hello = function () {
+        console.log(`こんにちは、${this.name}`);
+    }
+    const taro = new Person("独習太郎");
+    // helloメソッドを実行
+    taro.hello();
+    // > こんにちは、独習太郎
+    const hanako = new Person("独習花子");
+    hanako.hello();
+    // > こんにちは、独習花子
+</script>

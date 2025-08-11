@@ -1,0 +1,10 @@
+<script>
+    const wset = new WeakSet();
+    let obj = {};
+    wset.add(obj);
+    wset.add(obj);
+    console.log(wset);
+    // > WeakSet { 0: obj }
+    wset.add(1); // オブジェクト以外を登録するとエラーが発生！！
+    // > Uncaught TypeError: Invalid value used in weak set（不正な値がWeakSetのキーとして使用されました。）
+</script>

@@ -1,0 +1,44 @@
+<script>
+    function run(personName) {
+        return new Promise((resolve, reject) => {
+            const time = Math.floor(Math.random() * 11);
+            setTimeout(() => {
+                if (time % 4 === 0) { // 4の倍数のとき
+                    // 途中でコケる
+                    reject({ personName });
+                } else {
+                    // 完走
+                    resolve({ personName, time });
+                }
+            }, time);
+        });
+    }
+
+    const printTime = ({ personName, time }) => console.log(`${personName}のタイムは${time}です。`);
+
+    // ここからがPromiseチェーンの書き換え部分
+    // まず、awaitを使いたいのでasync functionを定義します。
+    async function startRelay() {
+        let result;
+
+        try {
+            // run関数の戻り値はPromiseインスタンスなので、awaitを先頭に付けることで待機します。
+            result = await run("太郎");
+            printTime(result); // 太郎の結果
+            result = await run("次郎"); // 次郎スタート
+            printTime(result); // 次郎の結果
+            result = await run("三郎"); // 三郎スタート
+            printTime(result); // 三郎の結果
+
+        } catch ({ personName }) { // 誰かこけた時
+            // Promiseのcatchメソッドはcatch節で書き換え可能です。
+            console.error(`${personName}がこけました。レースやり直し！`);
+
+        }
+
+    }
+
+    // リレー開始
+    startRelay();
+
+</script>

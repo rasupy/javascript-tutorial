@@ -1,0 +1,14 @@
+<script>
+    var a; // ①
+    let b; // ②
+    function fn1() { // ③
+        var c; // ④
+        let d; // ⑤
+        if (true) {
+            var e; // ⑥
+            let f; // ⑦
+            function fn2() { } // ⑧
+        }
+    }
+    const fn3 = function () { } // ⑨
+</script>

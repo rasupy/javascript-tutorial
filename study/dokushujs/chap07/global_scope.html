@@ -1,0 +1,8 @@
+<script>
+    var globalVal = "グローバル変数"; // トップレベルで変数を宣言
+    function globalFn() { return "グローバル関数"; } // トップレベルで関数を宣言
+    function callGlobals() {
+        console.log(globalVal, globalFn()); // 関数内から参照
+    }
+    callGlobals();
+</script>

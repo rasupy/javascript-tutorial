@@ -1,0 +1,30 @@
+<script>
+    // g global
+    const str = "return request resource";
+    str.match(/re\S+/); // gフラグなし
+    // 最初に見つかった一致箇所のみ取得
+    // 結果　 ["return", ... ]
+    str.match(/re\S+/g);
+    // すべての一致箇所を取得
+    // 結果　["return", "request", "resource"]
+
+    // i ignoreCase
+    /a/i.test("A"); // 結果　true
+
+    // m multiline
+    const multipleLines = `aaa
+bbb
+ccc`;
+    multipleLines.match(/^.+$/mg);
+    // 結果　["aaa", "bbb", "ccc"]
+
+    // s dotAll
+    /./.test("\n"); // 結果　false
+    /./s.test("\n"); // 結果　true
+
+    // u unicode
+    /^.$/.test("😁"); // 結果　false
+    // サロゲートペアの考慮がないため1文字として扱われない
+    /^.$/u.test("😁"); // 結果　true
+    // uフラグにより1文字として扱われる
+</script>

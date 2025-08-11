@@ -1,0 +1,15 @@
+<script>
+    class Shape {
+        constructor(options) {
+            /* ここに記述 */
+        }
+        draw() {
+            const { type, textColor, borderColor, bgColor } = this.options;
+            console.log(`形:[${type}] 文字色[${textColor}] 枠色[${borderColor}]　背景色[${bgColor}]`);
+        }
+    }
+    const triangle = new Shape({ type: "三角形" });
+    triangle.draw();
+    // 想定される出力は以下のとおり。
+    // > 形:[三角形] 文字色[黒] 枠色[なし]　背景色[白]
+</script>

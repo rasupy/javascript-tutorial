@@ -1,0 +1,14 @@
+<script>
+    let counter = 0;
+    const intervalID = setInterval(() => {
+        // counterに1足し合わせる
+        counter++;
+        console.log(counter);
+        // counterが3のとき
+        if (counter === 3) {
+            // インターバル処理の終了
+            clearInterval(intervalID);
+            console.log("インターバル終了");
+        }
+    }, 1000);
+</script>

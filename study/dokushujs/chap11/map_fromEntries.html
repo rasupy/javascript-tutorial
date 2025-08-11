@@ -1,0 +1,9 @@
+<script>
+    const map = new Map([
+        ["キー1", "値1"],
+        ["キー2", "値2"]
+    ]);
+    const obj = Object.fromEntries(map); // Mapからオブジェクトに変換
+    console.log(obj["キー1"]); // オブジェクトのためブラケット記法で値を取得可能
+    // > 値1
+</script>

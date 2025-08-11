@@ -1,0 +1,9 @@
+<script>
+    const wm = new WeakMap();
+    let keyObj = {};
+    wm.set(keyObj, "value"); // keyObjをキーにして"value"を追加
+    console.log(wm);
+    // > WeakMap { {...} => "value" } // keyObjと"value"が対で格納される
+    wm.set(1, "value2"); // オブジェクト以外をキーにするとエラーが発生！！
+    // > Uncaught TypeError: Invalid value used as weak map key（不正な値がWeakMapのキーとして使用されました。）
+</script>

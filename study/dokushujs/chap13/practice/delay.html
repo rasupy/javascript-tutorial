@@ -1,0 +1,25 @@
+<script>
+    function delay(fn, message, ms) {
+        setTimeout(function () {
+            fn(message);
+        }, ms);
+    }
+
+    delay(console.log, "こんにちは", 1000); // 解答①
+
+    delay(alert, "さようなら", 2000); // 解答②
+
+    // 解答③
+    delay(function (message1) {
+
+        console.log(message1);   // 「１秒経ちました。」
+        // delayのコールバック関数内でさらにdelayを実行（delay関数のネスト）
+        delay(function (message2) {
+
+            console.log(message2); // 「さらに１秒経ちました。」
+
+        }, "さらに１秒経ちました。", 1000);  // さらに１秒後
+
+    }, "１秒経ちました。", 1000);  // １秒後
+
+</script>

@@ -1,0 +1,23 @@
+<section id="container">                     <!-- ① -->
+    <span class="target-cls"></span>　　　　　<!-- ② -->
+    <div class="list">
+        <input name="child1">　　　　　　　　 <!-- ③ -->
+        <input name="child2">
+    </div>
+    <p class="target-cls"></p>　　　　　　　　<!-- ②、④ -->
+</section>
+<script>
+    /* ① id属性から要素を取得 */
+    const elById = document.querySelector("#container");
+    
+    /* ② class属性に一致する全ての要素を取得 */
+    const elsByCls = document.querySelectorAll(".target-cls");
+    // * 一致した一番最初の要素のみ取得する場合にはquerySelectorを使用
+    const elByCls = document.querySelector(".target-cls");            
+    
+    /* ③ name属性の値がchild1の要素を全て取得 */
+    const elsByName = document.querySelectorAll('[name="child1"]');
+    
+    /* ④ タグ名に一致する全ての要素を取得 */
+    const elsByTag = document.querySelectorAll("p");
+</script>

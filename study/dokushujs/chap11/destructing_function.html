@@ -1,0 +1,14 @@
+<script>
+    const fruitsArry = ["banana", "orange", "grape"];
+    const fruitsObj = { banana: "バナナ", orange: "オレンジ" };
+    function bunkatuArry([, , fruit3]) { // 1つ目、2つ目の要素を空白にする
+        console.log(fruit3);
+    }
+    bunkatuArry(fruitsArry); // 配列を実引数として渡す
+    // > grape
+    function bunkatuObj({ orange }) { // orangeのみ引数として抽出
+        console.log(orange);
+    }
+    bunkatuObj(fruitsObj); // オブジェクトを実引数として渡す
+    // > オレンジ
+</script>

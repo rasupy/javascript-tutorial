@@ -1,0 +1,8 @@
+<span id="test">Hello <span style="display: none;">World</span></span>
+<script>
+    const test = document.querySelector("#test");
+    console.log(`innerText: ${test.innerText}`);
+    console.log(`textContent: ${test.textContent}`);
+    // > innerText: Hello
+    // > textContent: Hello World
+</script>

@@ -1,0 +1,15 @@
+<script>
+    function factory(greeting) {
+        function innerFn(name) {
+            console.log(greeting + " " + name); // レキシカルスコープの変数（greeting）を使用
+        }
+        return innerFn; // レキシカルスコープの変数（greeting）を内部で使用した関数を実行結果として®
+        返す
+    }
+    const hello = factory("こんにちは");
+    hello("太郎");
+    // > こんにちは 太郎
+    const bye = factory("さようなら");
+    bye("太郎");
+    // > さようなら 太郎
+</script>

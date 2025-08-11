@@ -1,0 +1,35 @@
+{
+    "name": "sample",
+    "author": "独習太郎 <taro@dokusyu.com> (https://dokusyu.com)",
+    "version": "1.0.0",
+    "description": "A Test project",
+    "type": "module",
+    "main": "src/main.js",
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/dokusyu/testing.git"
+    },
+    "private": true,
+    "scripts": {
+    "dev": "node sample.js",
+    "start": "npm run dev"
+    },
+    "dependencies": {
+    "vue": "^2.5.2"
+    },
+    "devDependencies": {
+    "webpack-merge": "^4.1.0"
+    },
+    "optionalDependencies": {
+        "sharp": "0.26.3"
+    },
+    "engines": {
+        "node": ">= 6.0.0",
+        "npm": ">= 3.0.0"
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not ie <= 8"
+    ]
+}

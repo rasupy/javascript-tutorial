@@ -1,0 +1,11 @@
+<script>
+    const obj1 = { prop1: 10, prop2: 20 };
+    const obj2 = { prop3: 30, prop4: 40 };
+    console.log({ ...obj1, ...obj2 }); // オブジェクトのマージ
+    // > {prop1: 10, prop2: 20, prop3: 30, prop4: 40}
+    console.log({ prop0: 0, ...obj2, prop5: 50 }); // 任意のプロパティの追加
+    // > {prop0: 0, prop3: 30, prop4: 40, prop5: 50}
+    // プロパティ重複時は、あとから定義したほうで上書き
+    console.log({ prop1: 0, ...obj1 });
+    // > {prop1: 10, prop2: 20}
+</script>

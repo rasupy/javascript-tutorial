@@ -1,0 +1,7 @@
+<script>
+    // 以下のようにenumerableの値を確認できていれば正解です。
+    const arry = []; // 空の配列を定義
+    const propDesc = Reflect.getOwnPropertyDescriptor(arry, "length"); // 記述子を取得
+    console.log(propDesc.enumerable); // 列挙可能性を確認
+    // > false
+</script>

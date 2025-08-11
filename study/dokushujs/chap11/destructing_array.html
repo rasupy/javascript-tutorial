@@ -1,0 +1,24 @@
+<script>
+    let arry = [1, 2, 3];
+    // 変数x, y, zに配列の要素を代入する
+    let [x, y, z] = arry;
+    console.log(x, y, z);
+    // > 1 2 3
+    // 不要な要素は空白としておくことでスキップできる
+    let [x1, , z1] = arry; // 2つ目の要素を空白にする
+    console.log(x1, z1);
+    // > 1 3
+    // 宣言済みの変数に対しても代入できる
+    let x2;
+    [x2] = arry;
+    console.log(x2);
+    // > 1
+    // デフォルト値を設定できる
+    let [, , , a3 = 4] = arry;
+    console.log(a3);
+    // > 4
+    // スプレッド演算子（第12章）と合わせて使うこともできる
+    let [x4, ...rest] = arry;
+    console.log(x4, rest);
+    // > 1[2, 3]
+</script>

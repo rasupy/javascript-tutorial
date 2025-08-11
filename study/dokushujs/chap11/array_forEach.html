@@ -1,0 +1,29 @@
+<script>
+    const arry = [1, 2, 3, 4, 5];
+    arry.forEach(function (value, index, arry) {
+        console.log(value, index, arry);
+    });
+    // > 1 0 [1, 2, 3, 4, 5]
+    // > 2 1 [1, 2, 3, 4, 5]
+    // > 3 2 [1, 2, 3, 4, 5]
+    // > 4 3 [1, 2, 3, 4, 5]
+    // > 5 4 [1, 2, 3, 4, 5]
+
+    // for文で記述した場合
+    for (let index = 0; index < arry.length; index++) {
+        let value = arry[index];
+        console.log(value, index, arry);
+    }
+    // > 1 0 [1, 2, 3, 4, 5]
+    // > 2 1 [1, 2, 3, 4, 5]
+    // > 3 2 [1, 2, 3, 4, 5]
+    // > 4 3 [1, 2, 3, 4, 5]
+    // > 5 4 [1, 2, 3, 4, 5]
+
+    arry.forEach((value, index, arry) => console.log(value, index, arry));
+    // > 1 0 [1, 2, 3, 4, 5]
+    // > 2 1 [1, 2, 3, 4, 5]
+    // > 3 2 [1, 2, 3, 4, 5]
+    // > 4 3 [1, 2, 3, 4, 5]
+    // > 5 4 [1, 2, 3, 4, 5]
+</script>

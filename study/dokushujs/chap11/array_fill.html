@@ -1,0 +1,19 @@
+<script>
+    // fillを使わない場合の例
+    const arry1 = [];
+    for (let i = 0; i < 100; i++) {
+        arry1.push(0);
+    }
+    console.log(arry1);
+    // > [0, 0, 0, 0, …]
+
+
+    // fillを使った場合の例
+    const arry2 = new Array(100);
+    arry2.fill(0);
+
+    // (new Array( 100 )).fill( 0 )のように書くとより記述を簡略化できます。
+
+    console.log(arry2);
+    // > [0, 0, 0, 0, …]
+</script>

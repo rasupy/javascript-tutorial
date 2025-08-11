@@ -1,0 +1,7 @@
+<script>
+    var globalVal = "グローバル変数";
+    function globalFn() { return "グローバル関数"; }
+</script>
+<script>
+    console.log(globalVal, globalFn()); // 異なる<script>タグから参照
+</script>

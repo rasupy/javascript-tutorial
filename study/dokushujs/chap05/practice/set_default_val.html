@@ -1,0 +1,24 @@
+<script>
+    // ①の解答例
+    // 解答例１（ if文を使った場合 ）
+    let val = "";
+    if (!val) {
+        val = "Hello";
+    }
+    console.log(val);
+
+    // 解答例２（ 論理和を使った場合 ）
+    let val = "";
+    val = val || "Hello";
+
+    // ②の解答例
+    // 解答例１（ if文を使った場合 ）
+    // let val = null;
+    // if (val === undefined || val === null) {
+    //     val = "Hello";
+    // }
+
+    // // 解答例２（ Null合体演算子を使った場合 ）
+    // let val = null;
+    // val = val ?? "Hello";
+</script>

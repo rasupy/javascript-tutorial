@@ -1,0 +1,15 @@
+<script>
+    function delayMessageFactory(printFn, ms) {
+        return function (msg) {
+            setTimeout(function () {
+                printFn(msg);
+            }, ms);
+        };
+    }
+    const dialog = delayMessageFactory(alert, 2000);
+    dialog("こんにちは");
+    // ２秒後にアラートで「こんにちは」と表示されます。
+    const log = delayMessageFactory(console.log, 1000);
+    log("こんばんは");
+    // １秒後にコンソールに「こんばんは」と表示されます。
+</script>

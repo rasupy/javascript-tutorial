@@ -1,0 +1,15 @@
+<script>
+    function compare(val1, val2) {
+        if (val1 < val2) {
+            return -1; // 戻り値が0より小さい場合、val1をval2の前に持ってくる
+        }
+        if (val1 > val2) {
+            return 1; // 戻り値が0より大きい場合、val2をval1の前に持ってくる
+        }
+        return 0; // 戻り値が0の場合、val1、val2の並べ替えはしない
+    }
+    const arry = [10, 2, 7, 3, 9];
+    arry.sort(compare);
+    console.log(arry);
+    // > [2, 3, 7, 9, 10]
+</script>

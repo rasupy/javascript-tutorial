@@ -1,0 +1,33 @@
+<script>
+    class Person {
+        constructor(firstname, lastname) {
+            this.firstname = firstname;
+            this.lastname = lastname;
+            /* this.fullnameの定義は書かない！ */
+        }
+        get fullname() {
+            // fullnameが取得された場合には氏名を結合して返す
+            return this.lastname + this.firstname;
+        }
+        set age(value) {
+            // ageに値が設定された場合には _ageに数値を設定
+            this._age = Number(value);
+        }
+        get age() {
+            // ageが取得された場合には値が保持されている _ageの値を返す
+            return this._age;
+        }
+    }
+    const taro = new Person("太郎", "独習");
+    // ゲッターを通して値を取得
+    console.log(taro.fullname); // ❶
+    // > 独習太郎
+    // セッターを通して文字列で値を設定
+    taro.age = "18" // ❷
+    // ゲッターを通して値を取得
+    console.log(typeof taro.age); // taro._ageの値が返される
+    // > number 数値型が取得される
+    // オブジェクトの状態を確認
+    console.log(taro);
+    // > { firstname: "太郎", lastname: "独習", _age: 18 }
+</script>

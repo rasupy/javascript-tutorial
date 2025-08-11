@@ -1,0 +1,6 @@
+<script>
+    localStorage.setItem("car", "白い車");
+    const car = sessionStorage.getItem("car") || localStorage.getItem("car");
+    sessionStorage.setItem("car", car);
+    console.log(sessionStorage.getItem("car"));
+</script>

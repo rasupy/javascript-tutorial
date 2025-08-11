@@ -1,0 +1,15 @@
+<script>
+    function* fruits() {
+        yield "バナナ";
+        yield "リンゴ";
+        yield "メロン";
+    }
+    const iterableObject = fruits();
+    // 反復可能オブジェクトなため、for...of文が使用可能
+    for (const fruit of iterableObject) {
+        console.log(fruit);
+    }
+    // > バナナ
+    // > リンゴ
+    // > メロン
+</script>

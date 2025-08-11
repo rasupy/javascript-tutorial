@@ -1,0 +1,20 @@
+<script>
+    // undefinedは書き込み不可の変数
+    window.undefined = "エラーにはなりませんが値も変わりません。";
+    console.log(window.undefined);
+    // > undefined
+    // writableをfalseにしてみる
+    const obj = { val: 0 };
+    // 書き込み不可に変更
+    Reflect.defineProperty(obj, "val", { writable: false });
+    obj.val = "エラーにはなりませんが値も変わりません。";
+    console.log(obj.val);
+    // > 0
+</script>
+<script>
+    "use strict";
+    window.undefined = "エラーが発生します。"; // エラー発生！
+    const obj = { val: 0 };
+    Reflect.defineProperty(obj, "val", { writable: false });
+    obj.val = "エラーが発生します。";
+</script>

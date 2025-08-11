@@ -1,0 +1,66 @@
+<script>
+    // Personクラス
+    class Person {
+        constructor(fullname, age, gender) {
+            this.fullname = fullname;
+            this.age = age;
+            this.gender = gender;
+        }
+    }
+    // 登場人物
+    const taro = new Person("太郎", 18, "男");
+    const jiro = new Person("次郎", 15, "男");
+    const saburo = new Person("三郎", 10, "男");
+    const hanako = new Person("花子", 23, "女");
+    const hanayo = new Person("花代", 18, "女");
+
+    // 友達（friends）オブジェクト
+    const friends = new Map;
+
+    // ① jiroとhanayoを格納したSetオブジェクトをtaroをキーにしてfriendsに追加してください。
+    friends.set(taro, new Set([jiro, hanayo]));
+
+    // ② hanakoの友達として①と同様にhanayo, taro, saburoを追加してください。
+    friends.set(hanako, new Set([hanayo, taro, saburo]));
+
+    // ③ taroの友達としてhanakoを追加してください。
+    const taroFriendSet = friends.get(taro);
+    taroFriendSet.add(hanako);
+
+    // ④ taroの友達を年齢順にコンソールに出力しなさい。
+    const taroFriendArray = Array.from(taroFriendSet);
+    taroFriendArray.sort((friendA, friendB) => friendB.age - friendA.age); // 年齢を降順にソート
+    for (const person of taroFriendArray) {
+        console.log(person.fullname);
+    }
+    // > 花子
+    // > 花代
+    // > 次郎
+
+    // ⑤ taroには異性の友達が何人いるか求めなさい。
+    const femaleFriends = taroFriendArray.filter(person => {
+        return person.gender !== taro.gender; // 同性のpersonは取り除く
+    });
+    console.log(femaleFriends.length);
+    // >2（人）
+
+    // ⑥ friendsマップにキーとして登録されている人物とその友達を以下のように一覧で出力しなさい。
+    for (const [person, friendSet] of friends) { // ループと分割代入の併用
+        let friendStr = "";
+        for (const friend of friendSet) {  // 友達が格納されたSetをループ
+            friendStr += `[${friend.fullname}]`;
+        }
+        console.log(`私の名前は${person.fullname}です。友達には${friendStr}がいます。`)
+    }
+    // >私の名前は太郎です。友達には[次郎][花代][花子]がいます。
+    // >私の名前は花子です。友達には[花代][太郎][三郎]がいます。
+
+    // ⑥の解答（発展）
+    // 分割代入やforEach、reduceなどを使った場合には次のようにも記載できます。
+    friends.forEach((friendSet, person) => {
+        let friendStr = Array.from(friendSet) // Setを配列に変換してreduceを使用する。
+            .reduce((accu, { fullname }) => `${accu}[${fullname}]`, "");
+        console.log(`私の名前は${person.fullname}です。友達には${friendStr}がいます。`)
+    });
+
+</script>

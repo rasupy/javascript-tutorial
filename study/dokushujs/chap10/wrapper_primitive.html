@@ -1,0 +1,8 @@
+<script>
+    const str = "hello";
+    console.log(str instanceof String);
+    // > false strはStringコンストラクタのオブジェクトではない
+    str.toUpperCase();
+    console.log(str instanceof String);
+    // > false メソッドを呼び出しても恒久的にオブジェクトに変換されるわけではない
+</script>

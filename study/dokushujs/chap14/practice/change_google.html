@@ -1,0 +1,21 @@
+<a href="https://google.com/">Googleへ</a>
+<a href="https://www.bing.com/">Bingへ</a>
+<a href="https://duckduckgo.com/">DuckDuckGoへ</a>
+<script>
+    const links = document.querySelectorAll("a");
+
+    links.forEach(link => {
+        const url = link.getAttribute("href");
+        if (/google\.com/.test(url)) {
+            link.setAttribute("href", "https://www.yahoo.co.jp/");
+        }
+    });
+    /* 以下のようにしても繰り返し処理を記述できます。 */
+    for (const link of links) {
+        const url = link.getAttribute("href");
+        if (/google\.com/.test(url)) {
+            link.setAttribute("href", "https://www.yahoo.co.jp/");
+        }
+    }
+
+</script>

@@ -1,0 +1,25 @@
+<script>
+    // ① setTimeoutの利用
+    setTimeout(function (personName) {
+        console.log(`こんにちは、${personName}`);
+    }, 2000, "太郎");
+
+    // ② アロー関数への書き換え
+    setTimeout(personName => console.log(`こんにちは、${personName}`), 2000, "太郎");
+
+    // ③ コールバック関数を複数利用
+    function add(val1, val2) { return val1 + val2; }
+    function minus(val1, val2) { return val1 - val2; }
+
+    calcAndDisp(add, console.log, 3, 2);
+    // > 5 // 3 + 2の結果がコンソールに表示されます。
+
+    calcAndDisp(minus, alert, 3, 2);
+    // 1 （3 - 2の結果がアラートとして画面に表示されます。）
+
+    function calcAndDisp(calcFn, dispFn, val1, val2) {
+        const result = calcFn(val1, val2); // add, minusなどがcalcFnとして実行されます。
+        dispFn(result);  // console.logやalertなどがdispFnとして実行されます。
+    }
+
+</script>

@@ -1,0 +1,12 @@
+<body>
+    <!-- 新しい要素をここに追加 -->
+    <template id="tmpl">
+        <!-- テンプレートの作成 -->
+        <span>テンプレートHTMLを定義</span>
+    </template>
+    <script>
+        const tmpl = document.querySelector("#tmpl");
+        const targetNewElement = tmpl.content; // テンプレートの中身を取得
+        document.body.prepend(targetNewElement);
+    </script>
+</body>

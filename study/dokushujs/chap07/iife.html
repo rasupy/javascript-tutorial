@@ -1,0 +1,10 @@
+<script>
+    (function fnA() {
+        /* 即時関数fnAのスコープ */
+        const val = "即時関数外からは参照不可";
+    })();
+    (function fnB() {
+        /* 即時関数fnBのスコープ */
+        console.log(val); // エラーが発生！！
+    })();
+</script>

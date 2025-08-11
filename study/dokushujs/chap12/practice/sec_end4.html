@@ -1,0 +1,14 @@
+<script>
+    Array.prototype[Symbol.iterator] = function* () {
+        let arry = this;
+
+        for (let index = 0; index < arry.length; index++) {
+            yield [index, arry[index]];  // インデックスと値をペアで返却
+        }
+    }
+    for (let item of ["Hello", "World"]) {
+        console.log(item);
+    }
+    // > [0, "Hello"]
+    // > [1, "World"] 
+</script>

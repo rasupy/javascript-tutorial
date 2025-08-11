@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Todoアプリ</title>
+    <style>
+        .completed>span {
+            text-decoration: line-through;
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="todo-container">
+        <input type="text" name="" id="create-input" />
+        <button id="create-btn">追加</button>
+        <ul id="todo-list">
+            <!-- ここに.todo-itemを追加 -->
+        </ul>
+    </div>
+    <template id="todo-item-tmpl">
+        <li class="todo-item">
+            <span class="todo-title"></span>
+            <input type="button" class="delete-btn" value="削除">
+            <input type="button" class="complete-btn" value="完了">
+        </li>
+    </template>
+    <script>
+        // #todo-list要素を取得
+        const todoList = document.querySelector("#todo-list");
+        // テンプレートを取得
+        const todoItemTmpl = document.querySelector("#todo-item-tmpl");
+        // テンプレートのcontent（.todo-item要素）を取得
+        const todoItem = todoItemTmpl.content;
+        function createTodoItem(value) {
+            // todoItemを複製
+            const newItem = todoItem.cloneNode(true);
+            const newTitle = newItem.querySelector(".todo-title");
+            // タイトルを設定
+            newTitle.textContent = value;
+            // Todoリストの末尾に追加
+            todoList.append(newItem);
+        }
+        function deleteTodoItem(item) {
+            item.remove();
+        }
+        function completeTodoItem(item) {
+            item.classList.toggle("completed");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<script>
+    const todos = [
+        { title: "晩御飯", priority: 2, completed: false }, // { タイトル, 優先順位, 完了か否か }
+        { title: "ゴミ出し", priority: 1, completed: true },
+        { title: "食材の買い出し", priority: 3, completed: false },
+        { title: "洗濯", priority: 2, completed: true },
+        { title: "録画の視聴", priority: 1, completed: false },
+    ];
+
+    // ① Todoリストの出力
+    //   完了しているタスク：「{タイトル}は完了！」
+    //   完了していないタスク：「{タイトル}をやらないと！」
+    todos.forEach(({ title, completed }) => {
+        if (completed) {
+            console.log(`${title}は完了！`);
+        } else {
+            console.log(`${title}をやらないと！`);
+        }
+    });
+    // > 晩御飯をやらないと！
+    // > ゴミ出しは完了！
+    // > 食材の買い出しをやらないと！
+    // > 洗濯は完了！
+    // > 録画の視聴をやらないと！
+
+
+    // ② 完了していないタスクの抽出
+    const notCompleted = todos.filter(({ completed }) => {
+        return completed !== true; // return !completed;でもOK
+    });
+
+
+    // ③ 優先順位で並び替え
+    notCompleted.sort((todoA, todoB) => {
+        return todoB.priority - todoA.priority; // priorityを降順でソート
+    });
+
+    // ※解答③は分割代入で記述すると次のように記述できます。
+    notCompleted.sort(({ priority: priorityA }, { priority: priorityB }) => {
+        return priorityB - priorityA;
+    });
+
+    // ④ 関数（printTodo）の作成
+    function printTodo(todos) {
+        todos.forEach(({ title, completed }) => {
+            if (completed) {
+                console.log(`${title}は完了！`);
+            } else {
+                console.log(`${title}をやらないと！`);
+            }
+        })
+    }
+    printTodo(notCompleted);
+    // > 食材の買い出しをやらないと！
+    // > 晩御飯をやらないと！
+    // > 録画の視聴をやらないと！
+
+</script>

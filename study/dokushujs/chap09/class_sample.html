@@ -1,0 +1,24 @@
+<script>
+    class User {
+        constructor(username, password) {
+            this.username = username;
+            this.password = password;
+        }
+        login() {
+            console.log(`ログイン [ ${this.username} / ${this.password} ]`);
+            // プロパティの取得
+        }
+        changePassword(pwd) {
+            this.password = pwd; // プロパティの変更
+            console.log(`パスワードが[ ${this.password} ]に変更されました。`);
+        }
+    }
+    // インスタンス化
+    const taro = new User("独習太郎", "taro-pwd");
+    taro.login();
+    // > ログイン[独習太郎 / taro - pwd]
+    taro.changePassword("new-pwd");
+    // > パスワードが[new- pwd]に変更されました。
+    taro.login();
+    // > ログイン[独習太郎 / new- pwd]
+</script>

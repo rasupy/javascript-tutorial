@@ -1,0 +1,16 @@
+<script>
+    window.name = "花子";
+    const taro = {
+        name: "太郎",
+        hello: function () {
+            const jiro = {
+                name: "次郎",
+                hello: () => {
+                    console.log("こんにちは、" + this.name); アロー関数はthisを持たない
+                }
+            };
+            jiro.hello();
+        }
+    };
+    taro.hello();
+</script>

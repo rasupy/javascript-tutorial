@@ -1,0 +1,17 @@
+<script>
+    const chuka = ["回鍋肉", "青椒肉絲", "餃子"];
+    const desert = ["杏仁豆腐", "ゴマ団子"];
+
+    // ① chukaを複製しなさい。
+    const newChuka = [...chuka];
+    // ["回鍋肉", "青椒肉絲", "餃子"]
+
+    // ② chukaとdesertを結合した配列を作成しなさい。
+    const merged1 = [...chuka, ...desert];
+    // ["回鍋肉", "青椒肉絲", "餃子", "杏仁豆腐", "ゴマ団子"]
+
+    // ③ chukaとdesertの間に"担々麵"を追加した配列を作成しなさい。
+    const merged2 = [...chuka, "担々麵", ...desert];
+    // ["回鍋肉", "青椒肉絲", "餃子", "担々麵", "杏仁豆腐", "ゴマ団子"]
+
+</script>

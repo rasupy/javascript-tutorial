@@ -1,0 +1,8 @@
+<script>
+    const taro = { name: "太郎" };
+    function hello(greeting) {
+        console.log(`${greeting}、${this.name}`);
+    }
+    // thisと引数を束縛して関数helloを実行！！
+    hello.call(taro, "こんにちは");
+</script>

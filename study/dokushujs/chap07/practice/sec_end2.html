@@ -1,0 +1,24 @@
+<script>
+    let val = "グローバル";
+    function fn1() {
+        let val = "関数内";
+        if (Math.random() < .5) {
+            console.log(val); // ①
+            fn1(); // ②
+        }
+        function fn2() {
+            console.log(val); // ③
+        }
+        console.log(val); // ④
+        fn2();
+        return val;
+    }
+    function fn3() {
+        console.log(val); // ⑤
+    }
+    console.log(val); // ⑥
+    const result = fn1();
+    console.log(result); // ⑦
+    fn3();
+</script>
+</script>

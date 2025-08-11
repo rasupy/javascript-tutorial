@@ -1,0 +1,12 @@
+<script>
+    // ① 
+    const hello = function () { console.log("こんにちは"); }
+    // ② 
+    console.log(hello.toString());
+    // > function() { console.log( "こんにちは" ); }
+    
+    // ③ 
+    setTimeout(hello, 3000);
+    // ④ 
+    setTimeout(function () { console.log("こんにちは"); }, 3000);
+</script>

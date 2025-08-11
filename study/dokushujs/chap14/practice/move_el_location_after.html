@@ -1,0 +1,105 @@
+<div id="source">Source</div>
+<section id="section">
+    <div class="wrap">
+        <h1 class="title">
+            <span>タイトル</span>
+        </h1>
+        <ul class="list">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+</section>
+<script>
+    // ２秒毎にcallbackを実行するPromiseチェーン用関数
+    function moveElement(callback) {
+        // Promiseインスタンスを返す関数を戻り値とする。
+        return () => new Promise(resolve => {
+            setTimeout(() => {
+                callback();
+                resolve();
+            }, 2000);
+        });
+    }
+
+    // ターゲット要素
+    const source = document.querySelector("#source");
+
+    const answer1 = moveElement(() => {
+        // 解答 ① h1タグ内のspanタグの前に移動
+        const h1 = document.querySelector(".title");
+        h1.prepend(source);
+    });
+
+    const answer2 = moveElement(() => {
+        // 解答 ② h1タグの直後に移動
+        const h1 = document.querySelector(".title");
+        h1.after(source);
+    });
+
+
+    const answer3 = moveElement(() => {
+        // 解答 ③ .wrapタグの子要素の末尾に移動
+        const wrap = document.querySelector(".wrap");
+        wrap.append(source);
+    });
+
+
+    const answer4 = moveElement(() => {
+        // 解答 ④ liタグの２番目の文字の前に移動
+        const list = document.querySelector(".list");
+        const targetLi = list.children[1];
+        targetLi.prepend(source);
+    });
+
+    // Promiseチェーンの実行
+    answer1()
+        .then(answer2)
+        .then(answer3)
+        .then(answer4)
+
+    // ※ Promiseチェーンが難しく感じるようであれば、以下のようにしても同じ挙動となります。
+    /*
+    setTimeout(() => {
+        // 解答①
+        setTimeout(() => {
+            // 解答②
+            // … setTimeoutのネストを解答分だけ作成。
+        }, 2000);
+
+    }, 2000);
+    */
+</script>
+<style>
+    /* 多面表示用のスタイルです。 */
+    * {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    #source {
+        background-color: red;
+        font-weight: bold;
+    }
+
+    section {
+        background-color: cornflowerblue;
+    }
+
+    .wrap {
+        background-color: orange;
+    }
+
+    h1 {
+        background-color: plum;
+    }
+
+    ul {
+        background-color: thistle;
+    }
+
+    li {
+        background-color: cornflowerblue;
+    }
+</style>

@@ -1,0 +1,18 @@
+<script>
+    try {
+
+        let b = 10 + a;          // 宣言していな変数を使用しているためReferenceErrorが発生！
+        console.log(b);
+
+    } catch (e) { // 例外識別子は任意の名前を付ける事ができます。
+
+        console.error(e);   // エラーをコンソールに出力
+
+    } finally {
+
+        console.log("後続の処理");
+
+    }
+    // finallyブロックを設定しない場合は以下の部分に記述しても大丈夫です。
+    // console.log( "後続の処理" );
+</script>

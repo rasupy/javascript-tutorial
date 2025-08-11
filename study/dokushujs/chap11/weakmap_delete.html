@@ -1,0 +1,8 @@
+<script>
+    const wm = new WeakMap();
+    let keyObj = {};
+    wm.set(keyObj, "value");
+    wm.delete(keyObj); // キーと値のペアを削除
+    console.log(wm);
+    // > WeakMap { }
+</script>

@@ -1,0 +1,11 @@
+<div id="test"><span>Hello World</span></div>
+<script>
+    const testEl = document.querySelector("#test");
+    console.log(`textContent: ${testEl.textContent}`);
+    // > textContent: Hello World
+    setTimeout(() => {
+        testEl.textContent = "<h1>Good World</h1>";
+    }, 2000); // 2秒後に実行
+
+    /* h1タグがそのまま画面上に表示される */
+</script>

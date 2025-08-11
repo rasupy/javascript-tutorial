@@ -1,0 +1,12 @@
+<script>
+    function replacer(prop, value) { //プロパティ（prop）と値（value）が渡される
+        // 渡されたプロパティと値をログに表示
+        console.log(`prop[${prop}] value[`, value, "]");
+        return value;
+    }
+    const nestedObj = { a: { b: { c: 0 } } };
+    // replacerを設定してJSON文字列を生成
+    const jsonStr = JSON.stringify(nestedObj, replacer);
+    console.log(jsonStr);
+    // > { "a": { "b": {"c": 0 } } }
+</script>

@@ -1,0 +1,27 @@
+<script type="module">
+    /* exports.jsと同じフォルダに作成*/
+    /* 解答 ②　静的インポート */
+    import defaultFn, { obj, fn, StdClass } from "./exports.js";
+    defaultFn();
+    obj.console();
+    fn();
+    StdClass.console();
+    // > デフォルトエクスポート関数
+    // > オブジェクト（obj）
+    // > 関数（fn）
+    // > クラス（StdClass）
+    /* 解答 ③　動的インポート */
+    async function init() {
+        // 動的インポートで読み込み＋分割代入で        プロパティを変数、関数、クラスとして抽出
+        const { default: defaultFn, obj, fn, StdClass } = await import("./exports.js");
+        defaultFn();
+        obj.console();
+        fn();
+        StdClass.console();
+    }
+    init();
+    // > デフォルトエクスポート関数
+    // > オブジェクト（obj）
+    // > 関数（fn）
+    // > クラス（StdClass）
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h1 id="main-title"></h1>
+            <p class="sub-title"></p>
+        </header>
+        <main id="me" class="body">
+            <p class="child order-1" data-color="blue">1</p>
+            <p class="child order-2" data-color="red">2</p>
+            <p class="child order-3" data-color="orange">3</p>
+        </main>
+        <footer id="footer">
+            <form id="comment">
+                <textarea id="comment-body"></textarea>
+                <input type="submit" value="送信" />
+            </form>
+        </footer>
+    </div>
+    <script>
+        // ※それぞれの取得結果をconsole.logを使って確認してみてください。
+        const me = document.querySelector("#me");
+        // ① 子要素を全て取得
+        me.children;
+        // ② 子要素の中の一番最初の要素を取得
+        me.firstElementChild;
+        // ③ 子要素の中の一番最後の要素を取得
+        me.lastElementChild;
+        // ④ 次の兄弟要素
+        me.nextElementSibling;
+        // ⑤ 前の兄弟要素
+        me.previousElementSibling;
+        // ⑥ 親要素
+        me.parentElement;
+        // ⑦ 次の兄弟要素の子要素
+        me.nextElementSibling.children;
+        // ⑧ 前の兄弟要素の子要素の中の一番最後の要素を取得
+        me.previousElementSibling.lastElementChild;
+    </script>
+
+</body>
+
+</html>

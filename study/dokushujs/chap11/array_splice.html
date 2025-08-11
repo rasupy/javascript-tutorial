@@ -1,0 +1,13 @@
+<script>
+    const fruits = ["banana", "orange", "grape"];
+    let deletedVal = fruits.splice(1, 2); // 添字1から長さ2つ分切り取り
+    console.log(fruits);
+    //  > [ "banana" ] 元の配列から要素が削除される
+    console.log(deletedVal);
+    //  > [ "orange", "grape" ]
+
+    const fruitsB = ["banana", "orange", "grape"];
+    fruitsB.splice(1, 1, "apple", "lemon"); // "orange" を削除し、"apple"、"lemon"を追加
+    console.log(fruitsB);
+    // > ["banana", "apple", "lemon", "grape"]
+</script>

@@ -1,0 +1,18 @@
+<script>
+    const fruits = ["banana", "orange", "grape"];
+    const newFruits = fruits.slice(1, 2);
+    console.log(newFruits);
+    // > ["orange"] 終了位置の要素（grape）は含んでいないことに注意
+    console.log(fruits);
+    // > ["banana", "orange", "grape"] 元の配列に影響はない
+
+    // 終了位置を指定しない場合、開始位置からのすべての要素が複製される
+    const toEndFruits = fruits.slice(1);
+    console.log(toEndFruits);
+    // > ["orange", "grape"]
+
+    // 開始位置、終了位置を指定しない場合、すべての要素が複製される
+    const allFruits = fruits.slice();
+    console.log(allFruits);
+    // > ["banana", "orange", "grape"]
+</script>

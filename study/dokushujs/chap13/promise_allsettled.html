@@ -1,0 +1,26 @@
+<script>
+    // resolve()を200ミリ秒に実行するPromiseインスタンス
+    const myResolve = new Promise(resolve => {
+        setTimeout(() => {
+            resolve("resolveが呼ばれました。");
+            console.log("myResolveの実行が終了しました。");
+        }, 200);
+    });
+    // reject()を100ミリ秒に実行するPromiseインスタンス
+    const myReject = new Promise((_, reject) => {
+        setTimeout(() => {
+            reject("rejectが呼ばれました。");
+            console.log("myRejectの実行が終了しました。");
+        }, 100);
+    });
+    Promise.allSettled([myReject, myResolve])
+        .then(arry => {
+            for (const { status, value, reason } of arry) {
+                console.log(`ステータス:[${status}], 値:[${value}], エラー:[${reason}]`);
+            }
+        });
+    // > myRejectの実行が終了しました。
+    // > myResolveの実行が終了しました。
+    // > ステータス:[rejected], 値:[undefined], エラー:[rejectが呼ばれました。]
+    // > ステータス:[fulfilled], 値:[resolveが呼ばれました。], エラー:[undefined]
+</script>

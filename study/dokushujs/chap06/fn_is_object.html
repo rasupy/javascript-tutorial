@@ -1,0 +1,19 @@
+<script>
+    // 空の関数を定義
+    function fn() { }
+
+    fn.fullName = "独習太郎"; オブジェクトのようにプロパティの追加が可能
+
+    fn.hello = function () {
+        メソッドの追加も可能
+        console.log("こんにちは、独習太郎");
+    }
+
+    // プロパティの取得
+    console.log(fn.fullName);
+    // > 独習太郎
+
+    // メソッドの実行
+    fn.hello();
+    // > こんにちは、独習太郎
+</script>

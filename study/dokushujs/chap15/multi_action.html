@@ -1,0 +1,33 @@
+<div>この要素の色が変わります。</div>
+<button id="color">文字色の変更</button>
+<button id="bg-color">背景色の変更</button>
+<button id="all-color">文字色と背景色の変更</button>
+<button id="reset-color">リセット</button>
+<script>
+    const targetEl = document.querySelector("div");
+    const colorBtn = document.querySelector("#color");
+    const bgColorBtn = document.querySelector("#bg-color");
+    const allColorBtn = document.querySelector("#all-color");
+    const resetBtn = document.querySelector("#reset-color");
+    // 文字色を変更するアクション
+    function colorChange(event) {
+        targetEl.style.color = "#ff0000"; // 文字色を赤色に変更
+    }
+    // 背景色を変更するアクション
+    function bgColorChange(event) {
+        targetEl.style.backgroundColor = "blue"; // 背景色を青色に変更
+    }
+    // スタイルをリセットするアクション
+    function reset(event) {
+        targetEl.style.backgroundColor = "";
+        targetEl.style.color = "";
+    }
+    // イベントリスナにアクションを登録
+    colorBtn.addEventListener("click", colorChange);
+    bgColorBtn.addEventListener("click", bgColorChange);
+    // 関数を2つ登録
+    allColorBtn.addEventListener("click", colorChange);
+    allColorBtn.addEventListener("click", bgColorChange);
+    // スタイルのリセット
+    resetBtn.addEventListener("click", reset);
+</script>

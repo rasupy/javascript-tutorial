@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Todoアプリ</title>
+    <style>
+        /* ③用のスタイル */
+        .completed>span {
+            text-decoration: line-through;
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="todo-container">
+        <input type="text" name="" id="create-input" />
+        <button id="create-btn">追加</button>
+        <ul id="todo-list">
+            <!-- ここに.todo-itemを追加 -->
+        </ul>
+    </div>
+    <template id="todo-item-tmpl">
+        <li class="todo-item">
+            <!-- #todo-listに追加する元となるテンプレート -->
+            <span class="todo-title"></span>
+            <input type="button" class="delete-btn" value="削除">
+            <input type="button" class="complete-btn" value="完了">
+        </li>
+    </template>
+    <script>
+        /* ここに回答を追記 */
+    </script>
+</body>
+
+</html>

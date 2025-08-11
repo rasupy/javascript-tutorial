@@ -1,0 +1,9 @@
+<script>
+    const fruits = new Map();
+    fruits.set(1, "apple"); // 数値をキーとして値を登録する
+    const emptyObj = {};
+    fruits.set(emptyObj, "orange"); // オブジェクトをキーとして値を登録する
+    fruits.set(true, "grape"); // 真偽値をキーとして値を登録する
+    console.log(fruits);
+    // > Map { 1 => "apple", emptyObj => "orange", true => "grape" }
+</script>

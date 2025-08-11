@@ -1,0 +1,12 @@
+<script>
+    window.name = "花子";
+    function hello() {
+        console.log("こんにちは、" + this.name);
+    }
+    const taro = {
+        name: "太郎",
+        hello: hello // 上で定義した関数helloをhelloプロパティに登録
+    }
+    hello();
+    taro.hello();
+</script>

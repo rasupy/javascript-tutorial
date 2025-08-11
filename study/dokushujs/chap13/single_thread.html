@@ -1,0 +1,24 @@
+<html>
+
+<body>
+    <button>ボタン</button>
+    <script>
+        function sleep(ms) {
+            const startTime = new Date();
+            // whileループでmsミリ秒分ループを継続
+            while (new Date() - startTime < ms); // msミリ秒経つまでは条件がtrueにならない
+            // whileループが完了した直後にダイアログを表示
+            alert("sleep関数が完了しました。");
+        }
+        sleep(3000); // sleep関数を実行
+        // ボタンにクリック時の処理を実装
+        const btn = document.querySelector("button");
+        function clickHandler() {
+            alert("ボタンがクリックされました。");
+        }
+        // 「ボタン」にイベントを登録
+        btn.addEventListener("click", clickHandler);
+    </script>
+</body>
+
+</html>

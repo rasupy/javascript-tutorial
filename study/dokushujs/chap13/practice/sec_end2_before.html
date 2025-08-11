@@ -1,0 +1,16 @@
+<script>
+    function run(personName) {
+        return new Promise((resolve, reject) => {
+            const time = Math.floor(Math.random() * 11);
+            setTimeout(() => {
+                if (time % 4 === 0) { // 4の倍数のとき
+                    // 途中でコケる
+                    reject({ personName });
+                } else {
+                    // 完走
+                    resolve({ personName, time });
+                }
+            }, time);
+        });
+    }
+</script>

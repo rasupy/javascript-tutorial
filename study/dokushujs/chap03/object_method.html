@@ -1,0 +1,13 @@
+<script>
+    let person = {
+        hello: function () { console.log("こんにちは"); }
+    }
+    person.hello();
+    // > こんにちは
+    person.bye = function () { console.log("さようなら") }
+    person.bye();
+    // > さようなら
+    person.hello = function () { console.log("Hello"); } // 上書きすることも可能
+    person.hello();
+    // > Hello
+</script>

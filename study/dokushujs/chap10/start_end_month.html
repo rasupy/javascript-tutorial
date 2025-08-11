@@ -1,0 +1,9 @@
+<script>
+    const date = new Date();
+    const firstDay = new Date(date.getFullYear(), date.getMonth(), 1); // 月初
+    console.log(firstDay.toDateString());
+    // > "Sat May 01 2021"
+    const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0); // 月末
+    console.log(lastDay.toDateString());
+    // > "Mon May 31 2021"
+</script>

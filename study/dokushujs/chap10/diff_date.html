@@ -1,0 +1,8 @@
+<script>
+    const dayUnit = 1000 * 60 * 60 * 24; // ミリ秒 * 秒 * 分 * 時間 = 1日
+    const yearEnd = new Date(2021, 11, 31); // 2021/12/31
+    const yearBegin = new Date(2022, 0, 1); // 2022/01/01
+    const diffDays = Math.abs(yearEnd - yearBegin) / dayUnit;
+    console.log(diffDays);
+    // > 1
+</script>

@@ -1,0 +1,10 @@
+<script>
+    Array.prototype[Symbol.iterator] = function* () {
+        yield "Hello";
+        yield "World";
+    }
+    const arry = [1, 2, 3];
+    const newArry = [...arry];
+    console.log(newArry);
+    // > [ "Hello", "World" ]
+</script>

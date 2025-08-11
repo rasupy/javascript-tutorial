@@ -1,0 +1,13 @@
+<script>
+    let val = -1;
+    function timer() {
+        setTimeout(function () {
+            // 0 ~ 10のランダムな値を取得
+            val = Math.floor(Math.random() * 11); // この反映の後に後続の処理を実行したい！
+        }, 1000);
+    }
+    timer();
+    // 後続の処理を実行しても非同期処理による変更が反映されていない！
+    console.log(val);
+    // > -1
+</script>

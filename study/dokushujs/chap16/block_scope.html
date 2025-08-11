@@ -1,0 +1,16 @@
+<script>
+    if (true) {
+        function functionInBlock() { console.log("こんにちは") }
+    }
+    functionInBlock();
+    // > こんにちは
+</script>
+<script>
+    "use strict";
+    if (true) {
+        function functionInBlock() { console.log("こんにちは") }
+    }
+    functionInBlock(); // ブロックスコープ外のためエラーが発生！
+    // > Uncaught ReferenceError: functionInBlock is not defined
+    // （キャッチされていない参照に関するエラー：functionInBlockは定義されていません。）
+</script>

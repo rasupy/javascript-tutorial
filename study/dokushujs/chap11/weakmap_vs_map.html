@@ -1,0 +1,15 @@
+<script>
+    let wm, map;
+    function fn() {
+        const key = {};
+        wm = new WeakMap;
+        wm.set(key, "値");
+        map = new Map;
+        map.set(key, "値");
+    }
+    fn();
+
+    for (const pair of map) {
+        console.log(pair[0], pair[1]);
+    }
+</script>

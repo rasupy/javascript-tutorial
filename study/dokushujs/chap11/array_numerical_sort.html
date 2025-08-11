@@ -1,0 +1,16 @@
+<script>
+    const arry = [10, 2, 7, 3, 9];
+    // 昇順（小さい数値から大きい数値への並べ替え）
+    function ascending(a, b) {
+        return a - b;
+    }
+    console.log(arry.sort(ascending));
+    // > [2, 3, 7, 9, 10]
+
+    // 降順（大きい数値から小さい数値への並べ替え）
+    function descending(a, b) {
+        return b - a;
+    }
+    console.log(arry.sort(descending));
+    // > [10, 9, 7, 3, 2]
+</script>

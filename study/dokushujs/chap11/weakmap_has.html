@@ -1,0 +1,10 @@
+<script>
+    const wm = new WeakMap();
+    let keyObj = {};
+    wm.set(keyObj, "value");
+    console.log(wm.has(keyObj)); // keyObjはWeakMapのキーとして含まれる
+    // > true
+    console.log(wm.has({})); // { }はkeyObjとは別のオブジェクトのため、WeakMapのキーとして®
+    含まれない
+    // > false
+</script>

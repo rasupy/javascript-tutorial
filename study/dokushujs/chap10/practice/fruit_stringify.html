@@ -1,0 +1,20 @@
+<script>
+    const fruits = { banana: "うまい", apple: "普通", orange: "微妙", other: { grape: "うまい" } };
+
+    console.log(JSON.stringify(fruits, ["banana", "apple"])); // 解答①
+    // > { "banana": "うまい", "apple": "普通" }
+
+    // 解答②
+    function replacer(key, value) {
+        if (typeof value === "string"   // valueが文字列型
+            && value !== "うまい"  // valueが"うまい"以外の場合
+        ) {
+            return; // JSON文字列に含まれません。
+        }
+        return value; // JSON文字列に含まれます。
+    }
+
+    console.log(JSON.stringify(fruits, replacer));
+    // > { "banana": "うまい", "other": { "grape": "うまい" } }
+
+</script>

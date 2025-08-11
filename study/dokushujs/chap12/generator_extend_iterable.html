@@ -1,0 +1,24 @@
+<script>
+    class Iterable {
+        *[Symbol.iterator]() {
+            for (let key in this) {
+                yield [key, this[key]];
+            }
+        }
+    }
+    class Person extends Iterable {
+        constructor(name, age, gender) {
+            super();
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+        }
+    }
+    const taro = new Person("太郎", 18, "男");
+    for (const row of taro) {
+        console.log(row[0], row[1]);
+    }
+    // > name太郎
+    // > age 18
+    // > gender男
+</script>

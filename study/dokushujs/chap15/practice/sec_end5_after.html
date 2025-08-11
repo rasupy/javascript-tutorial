@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Todoアプリ</title>
+    <style>
+        .completed>span {
+            text-decoration: line-through;
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="todo-container">
+        <input type="text" name="" id="create-input" />
+        <button id="create-btn">追加</button>
+        <ul id="todo-list">
+            <!-- ここに.todo-itemを追加 -->
+        </ul>
+    </div>
+    <template id="todo-item-tmpl">
+        <li class="todo-item">
+            <span class="todo-title"></span>
+            <input type="button" class="delete-btn" value="削除" />
+            <input type="button" class="complete-btn" value="完了" />
+        </li>
+    </template>
+    <script>
+        const EVENT_CLICK = "click";
+        // 各要素の取得
+        const createInput = document.querySelector("#create-input");
+        const createBtn = document.querySelector("#create-btn");
+        const todoList = document.querySelector("#todo-list");
+        const todoItemTmpl = document.querySelector("#todo-item-tmpl");
+        const todoItem = todoItemTmpl.content;
+
+        // 解答 ① アイテムの追加
+        createBtn.addEventListener(EVENT_CLICK, () => {
+            // 「追加」ボタンを押すとcreateTodoItem関数が実行されます。
+            createTodoItem(createInput.value);
+        });
+
+        function createTodoItem(value) {
+            // todoItemを複製
+            const newItem = todoItem.cloneNode(true);
+            // テンプレート内の各要素の取得
+            const newTitle = newItem.querySelector(".todo-title");
+            const newdelBtn = newItem.querySelector(".delete-btn");
+            const newCompBtn = newItem.querySelector(".complete-btn");
+
+            // タイトルを設定
+            newTitle.textContent = value;
+
+            // 解答 ② アイテムの削除
+            newdelBtn.addEventListener(EVENT_CLICK, (event) => {
+                // input.delete-btnの親（li.todo-item）を削除
+                deleteTodoItem(event.target.parentElement);
+            });
+
+            // 解答 ③ アイテムの完了
+            newCompBtn.addEventListener(EVENT_CLICK, (event) => {
+                // 完了のクラスを追加
+                completeTodoItem(event.target.parentElement);
+            });
+
+            // Todoリストの末尾に追加
+            todoList.append(newItem);
+        }
+
+        function deleteTodoItem(item) {
+            item.remove();
+        }
+
+        function completeTodoItem(item) {
+            item.classList.toggle("completed");
+        }
+    </script>
+</body>
+
+</html>
