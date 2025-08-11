@@ -1,0 +1,38 @@
+<script>
+    /* [1]の解答 */
+    function noArgumentFunc() {
+        console.log("引数がない関数です。");
+    }
+
+    noArgumentFunc();
+    // > 引数がない関数です。
+
+    /* [2]の解答 */
+    function multiply(val1, val2) {
+        console.log(val1 * val2);
+    }
+
+    multiply(2, 3);
+    // > 6
+    multiply(15, 2, 10);
+    // > 30
+
+    /* [3]の解答 */
+    function twoArgumentFunc(arg1, arg2) {
+        console.log("arg1:", arg1);
+        console.log("arg2:", arg2);
+    }
+
+    twoArgumentFunc();
+    // > arg1: undefined
+    // > arg2: undefined
+
+    twoArgumentFunc(10);
+    // > arg1: 10
+    // > arg2: undefined
+
+    twoArgumentFunc(10, 20);
+    // > arg1: 10
+    // > arg2: 20
+
+</script>

@@ -1,0 +1,14 @@
+<div>この要素の色が変わります。</div>
+<button id="color">文字色の変更</button>
+<script>
+    const targetEl = document.querySelector("div");
+    const colorBtn = document.querySelector("#color");
+    // アクションの登録
+    colorBtn.addEventListener("click", function (event) { // 無名関数A
+        targetEl.style.color = "#ff0000";
+    });
+    // アクションの解除（解除できていません）
+    colorBtn.removeEventListener("click", function (event) { // 無名関数B
+        targetEl.style.color = "#ff0000";
+    });
+</script>

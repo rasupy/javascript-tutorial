@@ -1,0 +1,20 @@
+<a href="https://google.com/">Googleへは行かせません。</a>
+<a href="https://yahoo.co.jp/">Yahooへは行かせません。</a>
+<script>
+    // すべてのアンカータグ（a）を取得
+    const links = document.querySelectorAll("a");
+    // すべてのアンカータグに対してリンク無効化のアクションを追加
+    links.forEach(link =>
+        link.addEventListener("click", event => {
+            event.preventDefault(); // ブラウザのデフォルト処理を無効化
+            alert(event.currentTarget.textContent); // アラートの表示
+        })
+    );
+    /* 補足）上記のコードは、以下のコードをアロー関数で省略したものです。 */
+    // links.forEach( function ( link ) {
+    //  return link.addEventListener( "click", function ( event ) {
+    //      event.preventDefault(); // ブラウザのデフォルト処理を無効化
+    //      alert( event.currentTarget.textContent ); // アラートの表示
+    //  });
+    // });
+</script>

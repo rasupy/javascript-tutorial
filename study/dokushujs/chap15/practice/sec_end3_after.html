@@ -1,0 +1,33 @@
+<article>
+    article
+    <div>
+        div
+        <ul>
+            <li>li</li>
+            <li>li</li>
+            <li>li</li>
+        </ul>
+    </div>
+</article>
+
+<script>
+    // windowにクリックイベントを登録（articleに対して登録してもOK）
+    window.addEventListener("click", event => {
+        event.target.style.background = "red";
+        setTimeout(() => {
+            event.target.style.background = "none";
+        }, 1000);
+    });
+</script>
+
+<style>
+    /* スタイル調整 */
+    article,
+    div,
+    ul,
+    li {
+        padding: 10px;
+        margin: 10px;
+        border: 1px dotted black;
+    }
+</style>

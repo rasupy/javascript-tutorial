@@ -1,0 +1,12 @@
+<script>
+    const fruits = { apple: "リンゴ", banana: "バナナ" };
+    const entries = Object.entries(fruits);
+    console.log(entries);
+    // > [[apple, "リンゴ"], [banana, "バナナ"]]
+    // for...of文でプロパティと値のペアの配列をループ
+    for (const entry of entries) {
+        console.log(entry[0], entry[1]);
+    }
+    // > apple リンゴ
+    // > banana バナナ
+</script>

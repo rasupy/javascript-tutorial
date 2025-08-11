@@ -1,0 +1,32 @@
+<script>
+    // JSONファイルをフェッチして、オブジェクトへの変換まで行う関数
+    // thenの実行結果が戻り値となるため、Promiseインスタンスが返ります。
+    function fetchJSON(file) {
+        return fetch(file).then(res => res.json());
+    }
+
+    // メイン関数
+    // JSONファイルを取得して、指定のログを出力します。
+    async function main() {
+        // ファイルの取得とJSONメソッドの実行
+        // fruits, fruitTagsにはJSONがオブジェクトに変換された状態になります。
+        const fruits = await fetchJSON("fruit.json");
+        const fruitTags = await fetchJSON("fruit-tag.json");
+
+        // fruitsは配列なのでfor...ofで反復処理を記述できます。
+        // それぞれのオブジェクトのキー（key）と値（value）を取り出す。
+        for (const { key, value } of fruits) {
+            // keyでタグを取得
+            const tags = fruitTags[key];
+            // タグは配列のためjoinで文字列として結合
+            const tagStr = tags.join(",");
+            // ログ出力
+            console.log(`${value}は次の特徴があります。（${tagStr}）`);
+        }
+
+    }
+
+    // メイン関数の実行
+    main();
+
+</script>

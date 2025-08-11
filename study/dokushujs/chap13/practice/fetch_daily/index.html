@@ -1,0 +1,10 @@
+<script>
+    async function myFetchFn() {
+        const res = await fetch("daily.json");  // ファイルを取得
+        const jsonObj = await res.json();  // JSONファイルの中身の文字列をオブジェクトに変換
+        console.log(jsonObj.word);
+    }
+
+    // 関数を実行
+    myFetchFn();
+</script>

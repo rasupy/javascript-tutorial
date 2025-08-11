@@ -1,0 +1,28 @@
+<script>
+    let count = 0;
+    function promiseFactory() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                count++;
+                console.log(`${count}回目のコールです。時刻：[${new Date().toTimeString()}]`);
+                if (count === 3) { // 3回目のコールでエラー
+                    reject(count);
+                } else {
+                    resolve(count);
+                }
+            }, 1000);
+        });
+    }
+    const instance = promiseFactory();
+    instance
+        .then(() => { return instance; })
+        .then(() => { return instance; })
+        .then(() => { return instance; })
+        .catch(errorCount => {
+            console.error(`エラーに飛びました。現在のカウントは ${errorCount} です。`);
+        }).finally(() => {
+            console.log("処理を終了します。");
+        });
+    // > 1回目のコールです。時刻：[16:50:00 GMT+0900 (日本標準時)]
+    // > 処理を終了します。
+</script>

@@ -1,0 +1,19 @@
+<body style="height: 2000px; background-image: linear-gradient(#000, #fff);">
+    <script>
+
+        const intervalID = setInterval(() => {
+            // ログ用
+            console.log(window.scrollY);
+
+            // スクロール量が1000pxより大きい、かつ確認ダイアログで「OK」を押した時
+            if (window.scrollY > 1000) {
+                if (window.confirm("画面を閉じますか？")) {
+                    window.close();
+                } else {
+                    clearInterval(intervalID);
+                }
+            }
+        }, 1000);
+
+    </script>
+</body>

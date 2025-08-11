@@ -1,0 +1,9 @@
+<script>
+    function outer() {
+        function inner() {
+            console.trace("トレースログを出力します。");
+        }
+        inner();
+    }
+    outer();
+</script>

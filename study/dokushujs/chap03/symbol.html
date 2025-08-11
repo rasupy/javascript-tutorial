@@ -1,0 +1,12 @@
+<script>
+    let mySymbl1 = Symbol(); // あるSymbolの値
+    let mySymbl2 = Symbol(); // また別のSymbolの値
+    const obj = {
+        [mySymbl1]: "値１", // プロパティを定義
+        [mySymbl2]() { console.log("こんにちは"); } // メソッドを定義
+    }
+    console.log(obj[mySymbl1]);
+    // > 値１
+    obj[mySymbl2]();
+    // > こんにちは
+</script>

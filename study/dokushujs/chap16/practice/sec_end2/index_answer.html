@@ -1,0 +1,27 @@
+<!-- 
+    解答は以下の通りです。
+-->
+<input id="val1" type="number" value="0"> + <input id="val2" type="number" value="0"> = <span id="answer">0</span>
+<script type="module">
+    // add-event.jsを静的インポート
+    import addEvent from "./add-event.js";
+    // 各要素を取得
+    const val1 = document.querySelector("#val1");
+    const val2 = document.querySelector("#val2");
+    const answer = document.querySelector("#answer");
+    // 関数内でawaitを使いたいので、asyncを関数宣言の先頭に付ける
+    async function inputHandler() {
+        // 動的インポートでモジュールを読み込み + 分割代入でadd関数を取得
+        const { add } = await import("./calc.js");
+        // #val1、#val2を加算した結果を#answerのテキストとして設定
+        answer.textContent = add(val1.value, val2.value);
+    }
+    // addEventを使ってinputイベントにinputHandlerを登録
+    addEvent(val1, "input", inputHandler);
+    addEvent(val2, "input", inputHandler);
+</script>
+<style>
+    input {
+        width: 50px;
+    }
+</style>

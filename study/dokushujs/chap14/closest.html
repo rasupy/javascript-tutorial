@@ -1,0 +1,15 @@
+<section style="background-color: yellow;"> 　　
+    <div>
+        <span id="target"></span>
+    </div>
+</section> 　　
+<section style="background-color: orange;"> 　　
+</section> 　　
+
+<script>
+    setTimeout(() => {
+        const target = document.querySelector("#target");
+        const section = target.closest("section"); // 祖先要素のsectionタグを検索
+        section.prepend("発見 -> ");
+    }, 2000);
+</script>

@@ -1,0 +1,31 @@
+<script>
+    // ① 現在時刻
+    let now = new Date();
+    console.log(now);
+
+    // ② 1970 年1月1 日深夜0 時から経過した時刻をミリ秒で指定
+    let date = new Date(24 * 60 * 60 * 1e3); // 24時間 * 60分 * 60秒 * 1000ミリ秒 = 1日
+    console.log(date);
+
+    // ③ 日付フォーマット文字列の使用
+    // タイムゾーンの設定なし
+    // 現地時刻（JST）
+    const localTime = new Date("2021-05-04T02:35:00"); // A
+    console.log(localTime.toISOString());
+    // > 2021-05-03T17:35:00.000Z
+    // 世界標準時を指定
+    // ZによりUTC時刻
+    const utcTime = new Date("2021-05-04T02:35:00Z"); // B
+    console.log(utcTime.toISOString());
+    // > 2021-05-04T02:35:00.000Z UTC時刻のため、変わらない
+    // ハワイ時間を指定
+    // -10時間によりハワイ時刻
+    const hawaiiTime = new Date("2021-05-04T02:35:00-10:00"); // C
+    console.log(hawaiiTime.toISOString());
+    // > 2021-05-04T12:35:00.000Z
+
+    // ④ 年月日などを引数に分けたインスタンス化
+    let date = new Date(2021, 0, 4, 2, 35, 0);
+    console.log(date);
+    // > Mon Jan 04 2021 02:35:00 GMT+0900
+</script>

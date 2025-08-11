@@ -1,0 +1,9 @@
+<script>
+    const obj = { val: 1 }; // オブジェクトA
+    function fn(obj2) {
+        obj2 = { val: 2 }; // オブジェクトAとは別のオブジェクトBを設定
+    }
+    fn(obj);
+    console.log(obj.val);
+    // > 1
+</script>

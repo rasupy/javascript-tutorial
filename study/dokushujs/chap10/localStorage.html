@@ -1,0 +1,17 @@
+<!-- タブAで実行 -->
+<script>
+    localStorage.setItem("favoriteFruit", "リンゴ"); // ①番目に実行（タブAで値を保存）
+
+    // タブAで実行した場合
+    console.log(sessionStorage.getItem("favoriteFruit")); // ②番目の後に実行
+    // > "バナナ"
+</script>
+
+<!-- タブB（別タブ）で実行 -->
+<script>
+    localStorage.setItem("favoriteFruit", "バナナ"); // // ②番目に実行（タブBで値を保存）
+
+    // タブBで実行した場合
+    console.log(localStorage.getItem("favoriteFruit")); // ②番目の後に実行
+    // > "バナナ"
+</script>

@@ -1,0 +1,12 @@
+<h1 id="target">
+    <!-- <span>をここに追加 -->
+</h1>
+<span id="source">Hello World</span>
+<script>
+    // 2秒後に処理を実行
+    setTimeout(() => {
+        const targetEl = document.querySelector("#target");
+        const sourceEl = document.querySelector("#source");
+        targetEl.append(sourceEl);
+    }, 2000);
+</script>

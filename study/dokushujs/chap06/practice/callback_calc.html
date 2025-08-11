@@ -1,0 +1,17 @@
+<script>
+    function plus(a, b) { return a + b; }
+    function minus(a, b) { return a - b; }
+    function calc(val1, val2, callback) {
+        // callbackにplusやminusなどのコールバック関数が渡され、実行される
+        const result = callback(val1, val2);
+        console.log(result);
+        // 以下のように記述しても正解
+        // console.log( callback( val1, val2 ) );
+    }
+    calc(1, 2, plus);
+    // > 3
+    calc(10, 2, plus);
+    // > 12
+    calc(10, 2, minus);
+    // > 8
+</script>

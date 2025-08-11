@@ -1,0 +1,9 @@
+<script>
+    console.log("A");
+    setTimeout(() => {
+        queueMicrotask(() => console.log("B"));
+        console.log("C");
+    });
+    Promise.resolve().then(() => console.log("D"));
+    console.log("E");
+</script>

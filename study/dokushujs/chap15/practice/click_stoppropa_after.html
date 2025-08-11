@@ -1,0 +1,44 @@
+<body>
+    <div id="container">
+        <span>#container</span>
+        <div id="wrapper">
+            <span>#wrapper</span>
+            <div id="target"><span>#target</span></div>
+        </div>
+    </div>
+    <script>
+        const container = document.querySelector("#container");
+        const wrapper = document.querySelector("#wrapper");
+        const target = document.querySelector("#target");
+        // 要素（element）にクリックイベントを登録する
+        // isCaptureをtrueとすることでキャプチャリングを有効にする
+        function clickDialog(element, isCapture = false) {
+            // クリックイベントにアクションを登録
+            element.addEventListener("click", () => {
+                // <span>タグの文字列を取得
+                const spanText = element.firstElementChild.textContent;
+                // アラートを画面に表示
+                alert(`${spanText}のクリックイベントが発火しました。`);
+            }, isCapture);
+        }
+        // バブリング
+        clickDialog(container);
+        clickDialog(wrapper);
+        clickDialog(target);
+        // クリックイベントの伝播を停止するアクションの追加
+        wrapper.addEventListener("click", event => {
+            event.stopPropagation();
+        });
+    </script>
+    <style>
+        /* 画面の見栄えを調整 */
+        div {
+            margin: 10px;
+            border: 1px solid black;
+        }
+
+        body {
+            background-color: cornsilk;
+        }
+    </style>
+</body>

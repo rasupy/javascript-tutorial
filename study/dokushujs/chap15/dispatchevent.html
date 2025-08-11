@@ -1,0 +1,20 @@
+<!-- ボタンがクリックされると1ずつカウントアップします。 -->
+<span>0</span>
+<!-- ボタンを非活性にします。 -->
+<button disabled>+</button>
+<script>
+    const button = document.querySelector("button");
+    const span = document.querySelector("span");
+    let count = 0;
+    button.addEventListener("click", function (event) {
+        count++;
+        span.textContent = count;
+    });
+    // Eventオブジェクトをインスタンス化
+    const myEvent = new Event("click");
+    // 1秒間隔でclickイベントを発火
+    setInterval(() => {
+        // イベントを発火
+        button.dispatchEvent(myEvent);
+    }, 1000);
+</script>

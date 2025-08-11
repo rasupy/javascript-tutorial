@@ -1,0 +1,14 @@
+<script>
+    try {
+        console.log("tryブロックの処理を開始します。");
+        throw "例外を投げました。";
+        console.log("tryブロックの処理を終了します。");
+    } catch (e) {
+        console.error("catchブロックの処理を開始します。");
+        console.error("catchした値：" + e);
+        console.error("catchブロックの処理を終了します。");
+    } finally {
+        console.log("finallyブロックの処理を実行します。");
+    }
+    console.log("try/catch/finally文の後続のコードを実行します。");
+</script>

@@ -1,0 +1,25 @@
+<body>
+    <div id="target"></div>
+    <script>
+        const target = document.querySelector("#target");
+        target.onmouseenter = () => {
+            target.style.background = "red";
+        }
+        target.onmouseleave = () => {
+            target.style.background = "none";
+        }
+    </script>
+    <style>
+        div {
+            position: absolute;
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+        }
+
+        body {
+            background-color: cornsilk;
+        }
+    </style>
+</body>

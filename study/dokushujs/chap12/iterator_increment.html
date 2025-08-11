@@ -1,0 +1,29 @@
+<script>
+    // イテレータを生成する関数
+    function genIterator(max) {
+        let value = 0; // ❶
+        return {
+            next() {
+                if (value < max) { // valueがmaxより小さいとき
+                    return {
+                        done: false, // doneがfalseの場合は反復処理の継続を表す
+                        value: value++ // ●❶のvalueを値として設定してから+1を行う
+                    }
+                } else {
+                    return {
+                        done: true // doneがtrueになると、反復処理の終了を表す
+                    }
+                }
+            }
+        }
+    }
+    const iterator = genIterator(3);
+    console.log(iterator.next());
+    // > { done: false, value: 0 }
+    console.log(iterator.next());
+    // > { done: false, value: 1 }
+    console.log(iterator.next());
+    // > { done: false, value: 2 }
+    console.log(iterator.next());
+    // > { done: true }
+</script>

@@ -1,0 +1,20 @@
+<script>
+    const str = ["a", "b", "c"];
+    const num = [10, 20, 30];
+    alphabet:
+    for (let i = 0; i < str.length; i++) {
+        numeric:
+        for (let j = 0; j < num.length; j++) {
+            console.log(`アルファベット: [ ${str[i]} ]`, `数値: [ ${num[j]} ]`);
+            if (str[i] === "b" && num[j] === 30) {
+                break alphabet; // 親のループに対するbreak処理
+            }
+        }
+    }
+    // > アルファベット: [a] 数値: [10]
+    // > アルファベット: [a] 数値: [20]
+    // > アルファベット: [a] 数値: [30]
+    // > アルファベット: [b] 数値: [10]
+    // > アルファベット: [b] 数値: [20]
+    // > アルファベット: [b] 数値: [30]
+</script>

@@ -1,0 +1,15 @@
+<body>
+    <section id="target">
+        <button>イベントはここから発生します。</button>
+    </section>
+    <script>
+        // #target（sectionタグにイベントを登録します。）
+        const targetEl = document.querySelector("#target");
+        targetEl.addEventListener("click", function (event) {
+            // currentTargetは常にイベントを登録した要素が格納される
+            console.log(`currentTarget:[ ${event.currentTarget.nodeName} ]`);
+            // targetはイベントが発生した要素が格納される
+            console.log(`target:[ ${event.target.nodeName} ]`);
+        });
+    </script>
+</body>

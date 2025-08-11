@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="div1"></div>
+    <div id="div2">
+        <button>ボタン</button>
+    </div>
+    <script>
+        // Elementオブジェクトの取得
+        const div1 = document.querySelector("#div1");
+        const div2 = document.querySelector("#div2");
+        const button = document.querySelector("button");
+        // windowにclickイベントを登録（capture: trueとして登録）
+        window.addEventListener("click", () => {
+            console.log("windowのclickイベント");
+        }, { capture: true });
+        // div2にclickイベントを登録
+        div2.addEventListener("click", () => {
+            console.log("div2のclickイベント");
+        });
+        // buttonにclickイベントを登録
+        button.addEventListener("click", () => {
+            console.log("buttonのclickイベント");
+        });
+    </script>
+</body>
+
+</html>

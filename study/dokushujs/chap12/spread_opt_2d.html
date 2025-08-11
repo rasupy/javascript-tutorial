@@ -1,0 +1,10 @@
+<script>
+    const original = ["1階層目", "1階層目", ["2階層目"]];
+    const duplicated = [...original];
+    duplicated[0] = "オリジナルに影響なし"; // 1階層目の値を変更
+    duplicated[2][0] = "オリジナルにも影響"; // 2階層目の値を変更
+    console.log(original[0], duplicated[0]);
+    // > 1階層目 オリジナルに影響なし
+    console.log(original[2][0], duplicated[2][0]);
+    // > オリジナルにも影響 オリジナルにも影響
+</script>

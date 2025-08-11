@@ -1,0 +1,15 @@
+<script>
+    function incrementFactory() {
+        let count = 0; // countの状態はこの変数に保持される。
+        return function () { // 無名関数（関数A）をincrementFactoryの実行結果として返す
+            console.log(++count); // レキシカルスコープのcountへの参照を保持し続ける
+        }
+    }
+    const increment = incrementFactory();
+    increment(); // この関数の実行は関数Aの実行を意味する
+    // > 1
+    increment();
+    // > 2
+    increment();
+    // > 3
+</script>

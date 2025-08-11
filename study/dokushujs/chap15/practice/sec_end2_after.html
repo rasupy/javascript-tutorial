@@ -1,0 +1,36 @@
+<article>
+    <div></div>
+</article>
+
+<script>
+    // 各要素を取得
+    const article = document.querySelector("article");
+    const div = document.querySelector("div");
+
+    // article要素のクリックイベントにアクションを追加
+    article.addEventListener("click", () => {
+        alert("articleがクリックされました。");
+    });
+
+    // div要素のクリックイベントにアクションを追加
+    div.addEventListener("click", event => {
+        event.stopPropagation(); // イベント伝播を停止
+        alert("divがクリックされました。");
+    });
+</script>
+
+<style>
+    /* スタイル調整 */
+    article,
+    div {
+        padding: 30px;
+    }
+
+    article {
+        background-color: crimson;
+    }
+
+    div {
+        background-color: cyan;
+    }
+</style>

@@ -1,0 +1,37 @@
+<body>
+    <style>
+        body {
+            height: 2000px;
+            width: 2000px;
+            background: linear-gradient(135deg, black 0%, white 100%);
+        }
+    </style>
+    <script>
+        let position = localStorage.getItem("position");
+        position = JSON.parse(position);
+
+        // positionがローカルストレージから取得できなかった場合
+        if (position === null) {
+            position = { x: 0, y: 0 }; // デフォルト値を設定
+        } else {
+            // positionが取得できた場合、スクロール
+            window.scroll({ top: position.y, left: position.x, behavior: "smooth" });
+        }
+
+        // スクロールの監視とローカルストレージへの保存
+        const intervalID = setInterval(() => {
+
+            // スクロール量をpositionに保存
+            position.x = window.scrollX;
+            position.y = window.scrollY;
+
+            // 値の確認
+            console.log(position);
+
+            // ローカルストレージに保存
+            const json = JSON.stringify(position);
+            localStorage.setItem("position", json);
+
+        }, 1000);
+    </script>
+</body>

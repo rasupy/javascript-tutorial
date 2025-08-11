@@ -1,0 +1,19 @@
+<script>
+    class User {
+        constructor(username, password) {
+            this.username = username;
+            this.password = password;
+        }
+        login() {
+            this.check(); // thisを通して他のメソッドを実行
+            console.log(`ログイン [ ${this.username} / ${this.password} ]`);
+        }
+        check() {
+            console.log(`ログイン情報をチェックします。`);
+        }
+    }
+    const taro = new User("独習 太郎", "taro-pwd");
+    taro.login();
+    // > ログイン情報をチェックします。
+    // > ログイン[独習太郎 / taro - pwd]
+</script>

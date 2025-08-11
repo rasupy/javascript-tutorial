@@ -1,0 +1,52 @@
+<script>
+    // ドット（.）
+    /./.test("a"); // 結果　true
+    // [abc]
+    /[abc]/.test("apple"); // 結果　true
+    // [^abc]
+    /[^abc]/.test("fs"); // 結果　true
+    /[^abc]/.test("ab"); // 結果　false
+    // \w
+    /\w/.test("_"); // 結果　true
+    // \W
+    /\W/.test("_"); // 結果　false
+    // \d
+    /\d/.test("0"); // 結果　true
+    // \D
+    /\D/.test("a"); // 結果　true
+    // \s
+    /\s/.test(" "); // 結果　true
+    // \S
+    /\S/.test(" "); // 結果　false
+    //  ^
+    /^te/.test("test"); // 結果　true
+    /^te/.test("1test"); // 結果　false
+    // $
+    /st$/.test("test"); // 結果　true
+    /st$/.test("test1"); // 結果　false
+    // ?
+    /.?/.test(""); // 結果　true
+    /a+/.exec("aaaA"); // 一致箇所は"aaa"になる
+    /a+?/.exec("aaaA"); // 一致箇所は"a"になる（最短一致）
+    // +
+    /a+/.test("bbb"); // 結果　false
+    /a+/.test("bab"); // 結果　true
+    /a+/.test("aaaa"); // 結果　true
+    // *
+    /a*/.test(""); // 結果　true
+    /a*/.test("bab"); // 結果　true
+    /a*/.test("bb"); // 結果　 true
+    // (abc)
+    /(#).+\1/.test("#テスト#");
+    // 結果　true
+    "<h1>テスト</h1>".replace(/<h1>(.+)<\/h1>/, "<h2>$1</h2>");
+    // 結果　<h2>テスト</h2>"
+    // 一致した文字列を抽出して配列として保持する場合
+    let result = /a(b)c(d)e/.exec("abcde");
+    console.log(result);
+    // > ["abcde", "b", "d", ...];
+    // ab|cde
+    /(ab|cde)d/.test("abd"); // 結果　true
+    // \
+    /\.\+\(\[\//.test(".+([/"); // 結果　true
+</script>

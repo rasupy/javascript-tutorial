@@ -1,0 +1,9 @@
+<script>
+    async function asyncFunction() {
+        return "hello";
+    }
+
+    // 非同期関数の実行結果はPromiseオブジェクトとなるため、thenメソッドを呼ぶことが可能
+    asyncFunction().then((returnVal) => { console.log(returnVal) });
+    // > hello
+</script>

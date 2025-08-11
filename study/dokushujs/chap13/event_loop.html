@@ -1,0 +1,10 @@
+<script>
+    // ❶コードの実行開始
+    let val = 0;
+    setTimeout(function task() { // ❷タスクの登録
+        val = 1;
+    }, 0);
+    console.log(val); // ❸値の出力
+    // > 0 valは1ではなく0。すなわち❷より前に❸が実行されていることを表す
+    // ❹ グローバルコンテキストの消滅
+</script>

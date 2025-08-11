@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>タイトル</title>
+</head>
+
+<body>
+    <h1>見出し１</h1>
+    <p id="idAttr" class="classAttr">
+        これは段落です。<span>スパンに囲まれています。</span>
+    </p>
+    <p class="classAttr">これは段落です。</p>
+    <input type="text" name="nameAttr" />
+    <input type="password" name="pwdAttr" />
+    <script>
+        // ① id属性がidAttrの要素
+        document.querySelector("#idAttr");
+        document.getElementById("idAttr");
+
+        // ② class属性がclassAttrの全ての要素
+        document.querySelectorAll(".classAttr");
+
+        // ③ 全てのpタグ要素
+        document.querySelectorAll("p");
+
+        // ④ inputタグのtype属性がtextの要素
+        document.querySelector("input[type='text']");
+
+        // ⑤ span要素の祖先要素でpタグの要素
+        const span = document.querySelector("span");
+        span.closest("p");
+
+        // ⑥ h1タグの兄弟要素でtype属性がpasswordの要素
+        document.querySelector("h1 ~ input[type='password']");
+
+        // ⑦ id属性がidAttrの要素の子要素
+        document.querySelector("#idAttr > *");
+        // または
+        document.querySelector("#idAttr").firstElementChild;
+
+        // ⑧ inputタグのtype属性がtextの直後の要素
+        document.querySelector("input[type='text'] + *");
+        // または
+        document.querySelector("input[type='text']").nextElementSibling;
+
+    </script>
+</body>
+
+</html>

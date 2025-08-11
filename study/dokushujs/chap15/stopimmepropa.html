@@ -1,0 +1,18 @@
+<div>この要素の色が変わります。</div>
+<button id="all-color">文字色と背景色の変更</button>
+<script>
+    const targetEl = document.querySelector("div");
+    const allColorBtn = document.querySelector("#all-color");
+    // 文字色を変更するアクション
+    function colorChange(event) {
+        event.stopImmediatePropagation();
+        targetEl.style.color = "#ff0000"; // 文字色を赤色に変更
+    }
+    // 背景色を変更するアクション
+    function bgColorChange(event) {
+        targetEl.style.backgroundColor = "blue"; // 背景色を青色に変更
+    }
+    // 関数を2つ登録可能
+    allColorBtn.addEventListener("click", colorChange);
+    allColorBtn.addEventListener("click", bgColorChange);
+</script>

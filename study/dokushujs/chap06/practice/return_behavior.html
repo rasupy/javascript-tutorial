@@ -1,0 +1,30 @@
+<script>
+    /* [1]の解答 */
+
+    function hello() {
+        return "Hello World";
+    }
+
+    console.log(hello()); // 関数が実行された結果（戻り値）がコンソールに出力されます。
+    // > Hello World
+
+    // 一度変数に戻り値を格納することもできます。
+    const result = hello();
+    console.log(result);
+    // > Hello World
+
+
+    /* [2]の解答 */
+    function hello(personName) {
+        if (typeof personName !== "string") {
+            console.log("引数に文字列を渡してください。");
+            return; // 関数の処理を終了
+        }
+        console.log(`こんにちは、${personName}`);
+    }
+    hello("太郎");
+    // > こんにちは、太郎
+    hello(1);
+    // > 引数に文字列を渡してください。
+
+</script>

@@ -1,0 +1,10 @@
+<script>
+    function fn(obj) {
+        obj.arg1 ??= "初期値1";
+        obj.arg2 ??= "初期値2";
+        console.log(obj.arg1, obj.arg2);
+    }
+    const params = { arg2: "引数2" };
+    fn(params);
+    // > 初期値1 引数2
+</script>

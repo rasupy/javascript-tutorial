@@ -1,0 +1,17 @@
+<script>
+    // 数値のラッパーオブジェクトのメソッドを呼び出し
+    const num = 1000;
+    console.log(num.toExponential());
+    // > 1e+3
+    // 数値リテラルに直接メソッドをつなげて呼ぶと、小数点と表記
+    // が混合するため、シンタックスエラー（構文エラー）になる
+    // console.log(1000.toExponential());
+    // > Uncaught SyntaxError: Invalid or unexpected token
+
+    // ()でグループ化してやると直接メソッドを実行できる
+    console.log((1000).toExponential());
+    // > "1e+3"
+    // 真偽値のtrueを文字列として取得することも可能
+    console.log(true.toString());
+    // > "true"
+</script>

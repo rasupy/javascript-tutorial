@@ -1,0 +1,22 @@
+<input id="val1" type="number" value="0"> + <input id="val2" type="number" value="0"> = <span id="answer">0</span>
+<script>
+    // 各要素を取得
+    const val1 = document.querySelector("#val1");
+    const val2 = document.querySelector("#val2");
+    const answer = document.querySelector("#answer");
+
+    function inputHandler() {
+        // val1とval2のvalue属性の値を足し合わせます。
+        // val1.valueは文字列で取得されるため、Numberによって数値型に変換します。
+        answer.textContent = Number(val1.value) + Number(val2.value);
+    }
+
+    val1.addEventListener("input", inputHandler);
+    val2.addEventListener("input", inputHandler);
+
+</script>
+<style>
+    input {
+        width: 50px;
+    }
+</style>

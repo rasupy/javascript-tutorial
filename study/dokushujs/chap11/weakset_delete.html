@@ -1,0 +1,8 @@
+<script>
+    const wset = new WeakSet();
+    let obj = {};
+    wset.add(obj);
+    wset.delete(obj);
+    console.log(wset);
+    // > WeakSet { }
+</script>

@@ -1,0 +1,26 @@
+<script>
+
+    new Promise((resolve, reject) => {
+
+        setTimeout(() => {
+            const date = new Date; // 現在日時の取得
+            const second = date.getSeconds(); // 秒数の取得
+
+            if (second % 2) { // 2で割った余りが0、または1で条件分岐
+                // 奇数
+                reject(second); // catchへ
+            } else {
+                // 偶数
+                resolve(second); // thenへ
+            }
+        }, 1000); // 1秒待機
+
+    }).then(second => {
+        console.log(`${second}は偶数のため、成功とします。`);
+    }).catch(second => {
+        console.error(`${second}は奇数のため、エラーとします。`);
+    }).finally(() => {
+        console.log("処理を終了します。");
+    })
+
+</script>

@@ -1,0 +1,22 @@
+<body>
+    <div></div>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        div {
+            background: linear-gradient(#e66465, #9198e5);
+            height: 200vh;
+        }
+    </style>
+    <script>
+        function preventScroll(event) {
+            event.preventDefault(); // スクロール処理を停止
+        }
+        // touchmoveイベントのデフォルト処理（スクロール処理）を阻止
+        document.addEventListener("touchmove", preventScroll, { passive: false });
+        // wheelイベントのデフォルト処理（スクロール処理）を阻止
+        document.addEventListener("wheel", preventScroll, { passive: false });
+    </script>
+</body>

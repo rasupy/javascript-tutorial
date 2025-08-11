@@ -1,0 +1,15 @@
+<script>
+    function* genStep(min, max, step) {
+        // minを初期値として、ループ毎にstepを足し合わせ、maxより大きくなった時に反復処理を終了します。
+        for (let currentValue = min; currentValue <= max; currentValue += step) {
+            yield currentValue;
+        }
+    }
+    const it = genStep(4, 10, 2);
+    let a = it.next();
+
+    while (!a.done) {
+        console.log(a.value);
+        a = it.next();
+    }
+</script>

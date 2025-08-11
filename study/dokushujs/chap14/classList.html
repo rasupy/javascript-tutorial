@@ -1,0 +1,15 @@
+<div>2秒後に文字と背景の色が変わります。</div>
+<style>
+    /* 付与する予定のスタイルをCSSであらかじめ定義 */
+    .preparedClass {
+        color: red;
+        background-color: blue;
+    }
+</style>
+<script>
+    setTimeout(() => {
+        const div = document.querySelector("div");
+        // preparedClassという文字列をclass属性に追加する
+        div.classList.add("preparedClass");
+    }, 2000); // 2秒後にコールバック関数を実行
+</script>

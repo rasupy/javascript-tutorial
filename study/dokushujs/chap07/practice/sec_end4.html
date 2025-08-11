@@ -1,0 +1,15 @@
+<script>
+    // 第一段階
+    const delayMessageFactory = (printFn, ms) =>
+        function (msg) {
+            setTimeout(function () {
+                printFn(msg);
+            }, ms);
+        };
+
+    // 第二段階
+    const delayMessageFactory = (printFn, ms) => msg => setTimeout(function () { printFn(msg); }, ms);
+
+    // 第三段階
+    const delayMessageFactory = (printFn, ms) => msg => setTimeout(() => printFn(msg), ms);
+</script>

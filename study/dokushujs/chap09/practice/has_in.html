@@ -1,0 +1,20 @@
+<script>
+    class Parent {
+        constructor(familyName) {
+            this.familyName = familyName;
+        }
+        introduction() {
+            console.log(`名字は${this.familyName}です。`);
+        }
+    }
+    class Child extends Parent {
+        constructor(familyName) {
+            super(familyName);
+        }
+    }
+    const taro = new Child("独習");
+    console.log(taro.hasOwnProperty("familyName")); // ①
+    console.log(taro.hasOwnProperty("introduction")); // ②
+    console.log("introduction" in taro); // ③
+    console.log("hasOwnProperty" in taro); // ④
+</script>

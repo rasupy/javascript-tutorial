@@ -1,0 +1,15 @@
+<script>
+    function hello() {
+        console.log("こんにちは");
+    }
+    const returnVal1 = hello(); // ①
+    const double = function (num) {
+        if (typeof num !== "number") {
+            console.log("引数が不正なデータ型のため、関数の処理を終了します。");
+            return;
+        }
+        return num * 2;
+    }
+    const returnVal2 = double(10); // ②
+    const returnVal3 = double("100"); // ③
+</script>

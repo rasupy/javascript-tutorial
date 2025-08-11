@@ -1,0 +1,14 @@
+<script>
+    const array2D = [
+        ["太郎", "25歳", "男"], // 配列を格納
+        { name: "花子", age: "23歳", gender: "女" } // オブジェクトを格納
+    ];
+    console.log(array2D[0][0]); // [ 1階層目 ][ 2階層目 ]
+    // > 太郎
+    console.log(array2D[0][2]);
+    // > 男
+    console.log(array2D[1].name); // ドット記法でプロパティを取得
+    // > 花子
+    console.log(array2D[1]["age"]); // ブラケット記法でプロパティを取得
+    // > 23歳
+</script>

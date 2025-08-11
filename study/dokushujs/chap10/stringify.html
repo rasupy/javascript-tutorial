@@ -1,0 +1,35 @@
+<script>
+    // 変換対象のオブジェクト
+    const target = { a: 0, b: 1, c: { d: 2, e: 0, f: "hello" } };
+    // オブジェクトをJSONに変換する
+    console.log(JSON.stringify(target));
+    // > {"a":0,"b":1,"c":{"d":2,"e":0,"f":"hello"}}
+    // プロパティがaまたはbのもののみJSONに含む
+    console.log(JSON.stringify(target, ["a", "b"]));
+    // > { "a":0,"b":1 }
+    // 第2階層以降は配列による指定では抽出できない
+    console.log(JSON.stringify(target, ["e", "f"]));
+    // > { }
+    // replacerによって数値かつ値が1未満のものをJSONに含まない
+    function replacer(prop, value) {
+        // 値が数値型かつ1未満のとき
+        if (typeof value === "number" && value < 1) {
+            return; // 値を返さない（JSON文字列に含まれない）
+        }
+        return value;
+    }
+    console.log(JSON.stringify(target, replacer));
+    // > {"b":1,"c":{"d":2,"f":"hello"}}
+    // タブでインデントを挿入
+    // インデントにタブ文字（\t）を設定
+    console.log(JSON.stringify(target, null, "\t"));
+    // > {
+    // >   "a": 0,
+    // >   "b": 1,
+    // >   "c": {
+    // >     "d": 2,
+    // >     "e": 0,
+    // >     "f": "hello"
+    // >   }
+    // > }
+</script>

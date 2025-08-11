@@ -1,0 +1,8 @@
+<script>
+    let scriptVal = "スクリプトスコープの変数";
+    const scriptFn = function () { return "スクリプトスコープの関数"; }
+</script>
+<script>
+    console.log(scriptVal, scriptFn());
+    // > スクリプトスコープの変数 スクリプトスコープの関数
+</script>

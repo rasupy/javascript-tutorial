@@ -1,0 +1,10 @@
+<script>
+    function Test() { }
+    // 関数はオブジェクトの一種
+    Test.prop = "値"; // Test関数はオブジェクトなので、プロパティに値を設定できる
+    console.log(Test.prop);
+    // > 値
+    // prototypeプロパティの存在確認
+    console.log("prototype" in Test);
+    // > true
+</script>

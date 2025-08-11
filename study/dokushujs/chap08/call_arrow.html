@@ -1,0 +1,9 @@
+<script>
+    // hello関数から見たレキシカルスコープはグローバルスコープになる
+    window.name = "花子";
+    const hello = () => {
+        console.log("こんにちは、" + this.name);
+    }
+    hello.call({ name: "太郎" }); // アロー関数ではthisを束縛できない！
+    // > こんにちは、花子
+</script>

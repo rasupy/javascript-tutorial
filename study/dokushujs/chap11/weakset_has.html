@@ -1,0 +1,9 @@
+<script>
+    const wset = new WeakSet();
+    let obj = {};
+    wset.add(obj);
+    console.log(wset.has(obj));
+    // > true
+    console.log(wset.has({}));
+    // > false
+</script>

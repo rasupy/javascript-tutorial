@@ -1,0 +1,16 @@
+<script>
+    let scriptVal = "スクリプトスコープの変数";
+    function fn() {
+        let fnVal = "関数スコープの変数";
+        if (true) {
+            console.log(scriptVal, fnVal); // ❶
+            console.log(scriptFn()); // ❷
+            console.log(sVal); // ❸
+        }
+    }
+    function scriptFn() {
+        let sVal = "scriptFnの変数";
+        return "scriptFnの実行結果";
+    }
+    fn();
+</script>

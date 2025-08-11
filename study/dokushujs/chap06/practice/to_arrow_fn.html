@@ -1,0 +1,16 @@
+<script>
+    // ①引数がなく、関数の本文が一行の例
+    const hello = () => console.log("こんにちは");
+    hello();
+    // > こんにちは
+
+    // ②引数が一つで、関数の本文が一行の例
+    const double = num => num * 2;
+    console.log(double(10));
+    // > 20
+
+    // ③無名関数を使ったコールバック関数の例
+    setTimeout(name => console.log("こんにちは、" + name), 3000, "独習太郎");
+    // 3秒後に以下のメッセージが表示されます。
+    // > こんにちは、独習太郎
+</script>

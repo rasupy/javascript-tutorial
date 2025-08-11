@@ -1,0 +1,8 @@
+<script>
+    const taro = { name: "太郎" };
+    function hello(greeting, name) {
+        console.log(`${greeting}、${name}`);
+    }
+    // 引数を配列で束縛して関数helloを実行！！
+    hello.apply(null, ["こんにちは", "太郎"]);
+</script>

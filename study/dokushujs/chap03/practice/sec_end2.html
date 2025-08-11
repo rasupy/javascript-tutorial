@@ -1,0 +1,13 @@
+<script>
+    const TAX_RATE = 1.1;
+    let productPrice = 1000;
+    let priceWithTax = productPrice * TAX_RATE;
+
+    // 加算演算子の場合※ダブルクォートを使用しても正解
+    console.log("商品の金額は" + productPrice + "円ですので、税込金額は" + priceWithTax + "円です。");
+
+
+    // テンプレートリテラルの場合
+    console.log(`商品の金額は${productPrice}円ですので、税込金額は${priceWithTax}円です。`);
+
+</script>

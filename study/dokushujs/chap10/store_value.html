@@ -1,0 +1,16 @@
+<script>
+    // ローカルストレージにデータが保存されていないか確認
+    let data = localStorage.getItem("data");
+    data = JSON.parse(data);
+    // dataがローカルストレージから取得できなかった場合
+    if (data === null) {
+        data = { val: 0 }; // デフォルト値を設定
+    }
+    // data.valの状態をコンソールに表示
+    console.log(data.val);
+    // data.valに1加算
+    data.val++;
+    // JSON形式でローカルストレージにデータを保存
+    const json = JSON.stringify(data);
+    localStorage.setItem("data", json);
+</script>

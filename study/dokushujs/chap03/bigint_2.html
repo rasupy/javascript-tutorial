@@ -1,0 +1,17 @@
+<script>
+    /**
+     * BigInt型とNumber型は混在して使用できません。
+     */
+    let num = 2;
+    let bi = 3n;
+    console.log(num * bi);
+    // > Uncaught TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+    /**
+     * BigIntは小数点以下切り捨て
+     */
+    let three = 3n;
+    let five = 5n;
+    console.log(five / three);
+    // > 1n // 1.666..小数点以下は切り捨てられる
+</script>

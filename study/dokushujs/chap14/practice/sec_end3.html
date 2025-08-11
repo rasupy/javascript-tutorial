@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h1 id="main-title"></h1>
+            <p class="sub-title"></p>
+        </header>
+        <main id="me" class="body">
+            <p class="child order-1" data-color="blue">1</p>
+            <p class="child order-2" data-color="red">2</p>
+            <p class="child order-3" data-color="orange">3</p>
+        </main>
+        <footer id="footer">
+            <form id="comment">
+                <textarea id="comment-body"></textarea>
+                <input type="submit" value="送信" />
+            </form>
+        </footer>
+    </div>
+    <script>
+        // ① #main-titleに「タイトル」という文字列を追加
+        const mainTitle = document.querySelector("#main-title");
+        mainTitle.textContent = "タイトル";
+
+        // ② #sub-titleに「<b>サブタイトル<b>」というHTMLを追加
+        const subTitle = document.querySelector(".sub-title");
+        subTitle.innerHTML = "<b>サブタイトル</b>";
+
+        // ③ .childの.order-1を.childの.order-3の後に移動
+        const me = document.querySelector("#me");
+        const child1 = me.children[0];
+        me.append(child1);
+
+        // ④ .childの.order-2の要素を複製して#meの先頭に追加してください。
+        const child2 = document.querySelector(".child.order-2");
+        me.prepend(child2.cloneNode(true));
+
+        // ⑤ .child要素のデータ属性（data-color）をそれぞれの要素の文字色として適用してください。
+        for (const child of me.children) {
+            child.style.color = child.dataset.color;
+        }
+
+        // ⑥ #me要素の位置と大きさを取得して、#comment-bodyに以下のフォーマットで出力しなさい。
+        const commentBody = document.querySelector("#comment-body");
+        commentBody.textContent =
+            `#meのborderの上端とHTMLの上端の間隔は${me.offsetTop}pxです。\n` +
+            `#meのborderの左端とHTMLの左端の間隔は${me.offsetLeft}pxです。\n` +
+            `ビューポートの上端から#meの枠線の上端までの間隔は${me.getBoundingClientRect().y}pxです。\n` +
+            `ビューポートの左端から#meの枠線の左端までの間隔は${me.getBoundingClientRect().x}pxです。\n` +
+            `#meのborderを含めた高さは${me.offsetHeight}pxです。\n` +
+            `#meのborderを含めた横幅は${me.offsetWidth}pxです。`;
+
+    </script>
+
+</body>
+
+</html>

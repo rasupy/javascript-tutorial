@@ -1,0 +1,8 @@
+<script>
+    const dayUnit = 1000 * 60 * 60 * 24; // ミリ秒 * 秒 * 分 * 時間 = １日
+    const startDate = new Date("2023-05-20");
+    const endDate = new Date("2023-06-12");
+    const diffDays = Math.abs(endDate - startDate) / dayUnit;
+    console.log(diffDays);
+    // > 23（日）
+</script>

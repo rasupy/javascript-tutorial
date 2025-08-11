@@ -1,0 +1,18 @@
+<div>ボタンをクリックすると色が変わります。</div>
+<button>ボタン</button>
+<style>
+    /* 付与する予定のスタイルをCSSであらかじめ定義 */
+    .preparedClass {
+        color: red;
+        background-color: blue;
+    }
+</style>
+<script>
+    const div = document.querySelector("div");
+    const button = document.querySelector("button");
+    // buttonのクリックイベントにアクションを登録
+    button.onclick = function () {
+        // preparedClassという文字列をclass属性に対して付け外しする
+        div.classList.toggle("preparedClass");
+    };
+</script>

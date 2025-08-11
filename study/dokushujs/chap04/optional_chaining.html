@@ -1,0 +1,16 @@
+<script>
+    const person = {
+        name: "独習 太郎",
+        age: 28,
+        parents: {
+            mother: "Sara",
+            father: "John",
+        },
+    };
+    console.log(person.siblings); // ❶undefinedが取得される
+    // > undefined
+    console.log(person.siblings?.length); // ❷オプショナルチェイニング演算子の場合
+    // > undefined
+    console.log(person.siblings.length); // ❸ドット演算子の場合
+    // エラーが発生！！コードの実行が強制的に終了！！
+</script>

@@ -1,0 +1,7 @@
+<script>
+    const original = ["元の値"];
+    const duplicated = [...original]; // 元の配列の要素を持つ新しい配列を作成
+    duplicated[0] = "変更後の値"; // 複製後の値を変更
+    console.log(`original[ ${original[0]} ] duplicated[ ${duplicated[0]} ]`);
+    // > original[ 元の値 ] duplicated[ 変更後の値 ]
+</script>

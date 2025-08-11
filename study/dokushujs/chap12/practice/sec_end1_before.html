@@ -1,0 +1,12 @@
+<script>
+    const it = genStep(4, 10, 2); // genStep( min, max, step )
+    let a = it.next();
+    while (!a.done) {
+        console.log(a.value);
+        a = it.next();
+    }
+    // > 4
+    // > 6
+    // > 8
+    // > 10
+</script>

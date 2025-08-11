@@ -1,0 +1,47 @@
+<body>
+    <div id="container" data-mouseenter="purple" data-mouseleave="none">
+        <div id="target" data-mouseenter="green" data-mouseleave="none"></div>
+    </div>
+    <script>
+        const container = document.querySelector("#container");
+        const target = document.querySelector("#target");
+        function setEvents(element) {
+            // datasetの反復可能オブジェクトを取得
+            const datasets = Object.entries(element.dataset);
+            // for...of文でデータ属性をループ
+            for (const [eventType, color] of datasets) {
+                // イベントリスナにアクションを登録
+                element.addEventListener(eventType, () => {
+                    // 要素の背景色を変更
+                    element.style.background = color;
+                });
+            }
+        }
+
+        setEvents(container);
+        setEvents(target);
+    </script>
+    <style>
+        /* スタイルの調節 */
+        #container,
+        #target {
+            position: absolute;
+            border: 1px solid black;
+            margin: 20px;
+        }
+
+        #target {
+            width: 60px;
+            height: 60px;
+        }
+
+        #container {
+            width: 100px;
+            height: 100px;
+        }
+
+        body {
+            background-color: cornsilk;
+        }
+    </style>
+</body>

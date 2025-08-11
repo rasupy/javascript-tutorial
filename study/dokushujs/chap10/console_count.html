@@ -1,0 +1,16 @@
+<script>
+    // countで呼び出された回数を測定する
+    // ラベルごとに呼び出し回数を分けて出力する
+    for (let i = 0; i < 2; i++) {
+        console.count("ラベルA");
+        console.count("ラベルB");
+    }
+    // > ラベルA: 1
+    // > ラベルB: 1
+    // > ラベルA: 2
+    // > ラベルB: 2
+    // countResetで呼び出し回数を0にリセットする
+    console.countReset("ラベルA");
+    console.count("ラベルA");
+    // > ラベルA: 1
+</script>

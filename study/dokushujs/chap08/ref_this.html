@@ -1,0 +1,12 @@
+<script>
+    window.name = "花子";
+    const taro = {
+        name: "太郎",
+        hello: function () {
+            console.log("こんにちは、" + this.name);
+        }
+    }
+    const helloWho = taro.hello; // メソッドを変数に格納
+    helloWho(); // 関数として実行される
+    // > こんにちは、花子
+</script>

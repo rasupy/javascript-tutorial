@@ -1,0 +1,14 @@
+<script>
+    window.whichVal = "グローバルスコープ";
+    let whichVal = "スクリプトスコープ";
+    function outerScope() {
+        let whichVal = "outerScope関数スコープ";
+        function innerScope() {
+            let whichVal = "innerScope関数スコープ";
+            console.log(whichVal);
+            // > innerScope関数スコープ
+        }
+        innerScope();
+    }
+    outerScope();
+</script>

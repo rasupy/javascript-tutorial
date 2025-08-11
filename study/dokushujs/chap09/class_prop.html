@@ -1,0 +1,13 @@
+<script>
+    class TestCls {
+        constructor(arg) {
+            this.prop = arg;
+        }
+    }
+    const obj = new TestCls("引数");
+    console.log(obj.prop);
+    // > 引数
+    obj.prop = "値の変更";
+    console.log(obj.prop);
+    // > 値の変更
+</script>

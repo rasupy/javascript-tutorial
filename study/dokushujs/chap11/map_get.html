@@ -1,0 +1,13 @@
+<script>
+    const fruits = new Map();
+    const emptyObj = {};
+    fruits.set(emptyObj, "orange");
+    console.log(fruits.get(emptyObj)); // emptyObjをキーに値を取得
+    // > orange
+
+    /**
+     * 異なるオブジェクトで値を取得しようとした場合
+     **/
+    console.log(fruits.get({})); // emptyObjと構造が同じ別のオブジェクトで値を取得
+    // > undefined
+</script>

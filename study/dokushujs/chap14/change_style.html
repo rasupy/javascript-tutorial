@@ -1,0 +1,8 @@
+<div>2秒後に文字と背景の色が変わります。</div>
+<script>
+    setTimeout(() => {
+        const div = document.querySelector("div");
+        div.style.color = "red"; // 文字色を赤色に変更
+        div.style.backgroundColor = "blue"; // 背景色を青色に変更
+    }, 2000); // 2秒後にコールバック関数を実行
+</script>

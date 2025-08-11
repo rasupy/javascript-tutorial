@@ -1,0 +1,11 @@
+<script>
+    let person = {
+        name: { first: "太郎", last: "独習" },
+        age: 18
+    };
+    console.log(person.age);
+    // > 18
+    delete person.age; // ageプロパティを削除
+    console.log(person.age);
+    // > undefined // プロパティが見つからないためundefinedが取得される
+</script>

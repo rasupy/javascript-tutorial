@@ -1,0 +1,21 @@
+<div>
+    <button id="minus">-</button>
+    <span id="number">0</span>
+    <button id="plus">+</button>
+</div>
+<script>
+    // 数値の初期化
+    let count = 0;
+    // Elementの取得
+    const number = document.querySelector("#number");
+    const plusBtn = document.querySelector("#plus");
+    const minusBtn = document.querySelector("#minus");
+    plusBtn.onclick = function (event) { // #plusボタンのクリック時のアクションを定義
+        count++; // countに1を加算
+        number.textContent = count; // #numberのテキストを更新
+    };
+    minusBtn.onclick = function (event) { // #minusボタンのクリック時のアクションを定義
+        count--; // countから1を減算
+        number.textContent = count;
+    };
+</script>

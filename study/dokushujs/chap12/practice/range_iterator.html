@@ -1,0 +1,29 @@
+<script>
+    function rangeIterator(min, max) {
+        let value = min; // 初期値としてminを設定
+
+        return {
+            next() {
+                if (value < max) { // valueがmaxより小さい時
+                    return {
+                        done: false,
+                        value: value++ // valueを値として設定してから+1を行う。
+                    }
+                } else {
+                    return {
+                        done: true
+                    }
+                }
+            }
+        }
+    }
+
+    const iterator = rangeIterator(1, 3);
+    console.log(iterator.next().value);
+    // > 1
+    console.log(iterator.next().value);
+    // > 2
+    console.log(iterator.next().value);
+    // > undefined
+
+</script>

@@ -1,0 +1,59 @@
+<script>
+    // [ 商品名, 個数, 金額 ]
+    const orders = [
+        ["八宝菜", 1, 600],
+        ["餃子", 4, 200],
+        ["回鍋肉", 1, 500],
+        ["青椒肉絲", 2, 700]
+    ];
+
+    // ① 回鍋肉を配列（orders）から除外
+    // 分割代入を使った場合
+    const orderFiltered = orders.filter(([itemName]) => itemName !== "回鍋肉");
+    // 分割代入を使わなかった場合
+    // const orderFiltered = orders.filter( order => order[ 0 ] !== "回鍋肉" );
+
+    // ② 全ての商品が1000円より安いことを確認
+    // 分割代入を使った場合
+    const lt1000 = orderFiltered.every(([, , price]) => price < 1000);
+    // 分割代入を使わなかった場合
+    // const lt1000 = orderFiltered.every( order => order[ 2 ] < 1000 );
+    console.log(lt1000);
+    // >true
+
+    // ③ オーダーの金額が高いものから順にソート
+    // 分割代入を使った場合
+    orderFiltered.sort(([, , priceA], [, , priceB]) => priceB - priceA);
+    // 分割代入を使わなかった場合
+    // orderFiltered.sort( ( orderA, orderB ) => orderB[ 2 ] - orderA[ 2 ] );
+    console.log(orderFiltered);
+    // >[
+    // >  ["青椒肉絲", 2, 700],
+    // >  ["八宝菜", 1, 600],
+    // >  ["餃子", 4, 200]
+    // >]
+
+
+    // ④ オーダーをそれぞれ出力
+    // 分割代入を使った場合
+    orderFiltered.forEach(([itemName, amount, price]) => {
+        console.log(`${itemName}を${price}円で${amount}個注文しました。`)
+    });
+    // 分割代入を使わなかった場合
+    // orderFiltered.forEach( order => {
+    //     console.log( `${ order[ 0 ] }を${ order[ 2 ] }円で${ order[ 1 ] }個注文しました。` )
+    // });
+    // >青椒肉絲を700円で2個注文しました。
+    // >八宝菜を600円で1個注文しました。
+    // >餃子を200円で4個注文しました。
+
+    //  ⑤ オーダーの合計金額を出力
+    // 分割代入を使った場合
+    const reducer = (accu, [, amount, price]) => accu + amount * price;
+    // 分割代入を使わなかった場合
+    // const reducer = ( accu, order ) => accu + order[ 1 ] * order[ 2 ];
+    const sumPrice = orderFiltered.reduce(reducer, 0);
+    console.log(`合計金額は${sumPrice}円です。`);
+    // >合計金額は2800円です。
+
+</script>

@@ -1,0 +1,16 @@
+<script>
+    // ユーザーを作成するクラスの定義
+    class User {
+        constructor(username, password) {
+            this.username = username;
+            this.password = password;
+        }
+        login() {
+            console.log(`ログイン [ ${this.username} / ${this.password} ]`);
+        }
+    }
+    // オブジェクトの作成：独習太郎
+    const taro = new User("独習太郎", "taro-pwd");
+    // オブジェクトの作成：独習花子
+    const hanako = new User("独習花子", "hanako-pwd");
+</script>
