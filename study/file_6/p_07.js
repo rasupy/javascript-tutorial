@@ -1,0 +1,6 @@
+const minus = function( val1, val2 ) {
+    return val1 - val2;
+}
+
+let result = minus( 10, 5 );
+console.log( result );
