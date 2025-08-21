@@ -1,0 +1,12 @@
+window.a = 10;
+window.b = 11;
+
+const obj = {
+    a: 5,
+    b: 7,
+    calc() {
+        console.log( this.a + this.b );
+    }
+}
+
+setTimeout( obj.calc, 2000 );
