@@ -1,6 +1,7 @@
 class Person {
+  _lastname = "独習";
+
   constructor(firstname) {
-    this._lastname = "独習";
     this._firstname = firstname;
   }
 
