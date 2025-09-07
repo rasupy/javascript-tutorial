@@ -1,0 +1,3 @@
+const strArry = ["b", "c", "a"];
+strArry.sort();
+console.log(strArry); // ["a", "b", "c"]
