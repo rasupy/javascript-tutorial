@@ -1,0 +1,22 @@
+// 反復オブジェクト
+const iterableObject = {
+  [Symbol.iterator]() {
+    let value = 0;
+
+    return {
+      next() {
+        if (value > 2) {
+          return { done: true };
+        } else {
+          return {
+            done: false,
+            value: value++,
+          };
+        }
+      },
+    };
+  },
+};
+for (const value of iterableObject) {
+  console.log(value);
+}
