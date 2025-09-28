@@ -1,0 +1,12 @@
+// スプレッド演算子
+function sum(...vals) {
+  let returnValue = 0;
+  for (const val of vals) {
+    returnValue += val;
+  }
+  return returnValue;
+}
+
+console.log(sum(1, 2));
+console.log(sum(1, 2, 3));
+console.log(sum(1, 2, 3, 4));
