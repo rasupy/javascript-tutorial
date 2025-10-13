@@ -1,0 +1,22 @@
+<script>
+  async function fetchFruits() {
+    try {
+      const [resFruits, resTags] = await Promise.all([
+        fetch("fruit.json"),
+        fetch("fruit-tag.json"),
+      ]);
+
+      const fruits = await resFruits.json(); // 例: [{ key, value }, ...]
+      const tagMap = await resTags.json(); // 例: { apple: [...], banana: [...] }
+
+      for (const f of fruits) {
+        const tags = tagMap[f.key] ?? [];
+        console.log(`${f.value}は次の特徴があります。(${tags.join(", ")})`);
+      }
+    } catch (e) {
+      console.error("fetch エラー:", e);
+    }
+  }
+
+  fetchFruits();
+</script>
