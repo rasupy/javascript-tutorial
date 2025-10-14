@@ -1,0 +1,47 @@
+<!-- 練習問題 -->
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>見出し１</h1>
+    <p id="idAttr" class="classAttr">
+      これは段落です。<span>スパンに囲まれています。</span>
+    </p>
+    <p class="classAttr">これは段落です。</p>
+    <input type="text" name="nameAttr" />
+    <input type="password" name="pwdAttr" />
+  </body>
+  <script>
+    // id属性で取得
+    const idElem = document.getElementById("idAttr");
+    console.log(idElem);
+    // class属性がclassAttrのすべての要素
+    const classElems = document.getElementsByClassName("classAttr");
+    console.log(classElems);
+    // すべてのpタグの要素
+    const pElems = document.getElementsByTagName("p");
+    console.log(pElems);
+    // inputタグのtype属性がtextの要素
+    const inputTextElem = document.querySelector('input[type="text"]');
+    console.log(inputTextElem);
+    // <span>要素の祖先要素でpタグの要素
+    const spanAncestorPElem = document.querySelector("span").closest("p");
+    console.log(spanAncestorPElem);
+    // h1タグの兄弟要素でtype属性がpasswordの要素
+    const pwdSiblingElem =
+      document.querySelector("h1").nextElementSibling.nextElementSibling
+        .nextElementSibling;
+    console.log(pwdSiblingElem);
+    // id属性がidAttrの要素の子要素
+    const idChildElems = document.getElementById("idAttr").children;
+    console.log(idChildElems);
+    // inputタグのtype属性がtextの直後の要素
+    const inputTextNextElem =
+      document.querySelector('input[type="text"]').nextElementSibling;
+    console.log(inputTextNextElem);
+  </script>
+</html>
