@@ -1,0 +1,19 @@
+<!-- セレクタAPIを使ったElementの取得 -->
+<section id="container">
+  <span class="target-cls"></span>
+  <div class="list">
+    <input name="child1" />
+    <input name="child2" />
+  </div>
+  <p class="target-cls"></p>
+</section>
+<script>
+  const elById = document.querySelector("#container");
+
+  const elsByCls = document.querySelectorAll(".target-cls");
+  const elByCls = document.querySelector(".target-cls");
+
+  const elsByName = document.querySelectorAll('[name="child1"]');
+
+  const elsByTag = document.querySelectorAll("p");
+</script>
