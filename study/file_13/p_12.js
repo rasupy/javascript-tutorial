@@ -1,3 +1,4 @@
+// 要素の位置と大きさを取得する
 const htmlStr = `
 <div id="target">この要素の位置と大きさの取得</div>
 <style>
