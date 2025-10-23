@@ -1,0 +1,53 @@
+<!-- 親子関係を表すプロパティ -->
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <h1 id="main-title"></h1>
+        <p id="sub-title"></p>
+      </header>
+      <main id="me" class="body">
+        <p class="child order-1" data-color="blue">1</p>
+        <p class="child order-2" data-color="red">2</p>
+        <p class="child order-3" data-color="orange">3</p>
+      </main>
+      <footer id="footer">
+        <form id="comment">
+          <textarea id="comment-body"></textarea>
+          <input type="submit" value="送信" />
+        </form>
+      </footer>
+    </div>
+    <script>
+      // 1.子要素をすべて取得
+      const children = document.querySelectorAll("#me .child");
+      console.log(children);
+
+      // 2.最初の子要素を取得
+      const firstChild = document.querySelector("#me .child:first-child");
+      console.log(firstChild);
+
+      // 3.最後の子要素を取得
+      const lastChild = document.querySelector("#me .child:last-child");
+      console.log(lastChild);
+
+      // 4.次の兄弟要素を取得
+      const nextSibling = firstChild.nextElementSibling;
+      console.log(nextSibling);
+
+      // 5.前の兄弟要素を取得
+      const previousSibling = lastChild.previousElementSibling;
+      console.log(previousSibling);
+
+      // 6.親要素を取得
+      const parent = document.querySelector("#me").parentNode;
+      console.log(parent);
+    </script>
+  </body>
+</html>
