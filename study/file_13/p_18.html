@@ -1,0 +1,65 @@
+<!-- セレクタと要素の変更 -->
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <h1 id="main-title"></h1>
+        <p class="sub-title"></p>
+      </header>
+      <main id="me" class="body">
+        <p class="child order-1" data-color="blue">1</p>
+        <p class="child order-2" data-color="red">2</p>
+        <p class="child order-3" data-color="orange">3</p>
+      </main>
+      <footer id="footer">
+        <form id="comment">
+          <textarea id="comment-body"></textarea>
+          <input type="submit" value="送信" />
+        </form>
+      </footer>
+    </div>
+    <script>
+      // 1. #main-title要素を取得して、内容を「タイトル」に変更
+      const mainTitle = document.querySelector("#main-title");
+      mainTitle.append("タイトル");
+
+      // 2. .sub-title要素を取得して、内容を<b>サブタイトル</b>に変更
+      const subTitle = document.querySelector(".sub-title");
+      subTitle.insertAdjacentHTML("afterbegin", "<b>サブタイトル</b>");
+
+      // 3. .child の .order-1要素を .child の .order-3の後に移動
+      const me = document.querySelector("#me");
+      const childOrder1 = me.querySelector(".order-1");
+      const childOrder3 = me.querySelector(".order-3");
+      childOrder3.insertAdjacentElement("afterend", childOrder1);
+
+      // 4. .child の .order-2要素を複製して #me の先頭に追加
+      const childOrder2 = me.querySelector(".order-2");
+      let cloneChildOrder2 = childOrder2.cloneNode(true);
+      me.insertAdjacentElement("afterbegin", cloneChildOrder2);
+
+      // 5. .child 要素のデータ属性 (data-color)をそれぞれの要素の文字色としてて適用
+      // datasetプロパティを使用
+      // forEachメソッド：配列や要素の集合に対して、引数で渡した関数を一つずつ実行するメソッド
+      const children = me.querySelectorAll(".child"); // 全ての.child要素を取得
+      children.forEach((child) => {
+        const color = child.dataset.color; // data-color属性の値を取得
+        child.style.color = color;
+      });
+
+      // 6. #me要素の位置と大きさを習得して、#comment-bodyに以下のフォーマットで出力
+      const commentBody = document.querySelector("#comment-body");
+
+      const ans1 = me.offsetTop;
+      const text1 = `#meのborderの上端とHTMLの上端の感覚は${ans1}pxです。`;
+
+      commentBody.textContent = text1;
+    </script>
+  </body>
+</html>

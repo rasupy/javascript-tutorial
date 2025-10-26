@@ -1,0 +1,64 @@
+<!-- Todo アプリ 練習問題 -->
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todoアプリ</title>
+    <style>
+      /* ➂用のスタイル */
+      .completed > span {
+        text-decoration: line-through;
+        background-color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="todo-container">
+      <input type="text" name="" id="create-input" />
+      <button id="create-btn">追加</button>
+      <ul id="todo-list">
+        <!-- ここに.todo-itemを追加 -->
+      </ul>
+    </div>
+    <template id="todo-item-tmpl">
+      <li class="todo-item">
+        <!--#todo-listに追加する元となるテンプレート-->
+        <span class="todo-title"></span>
+        <input type="button" class="delete-btn" value="削除" />
+        <input type="button" class="complete-btn" value="完了" />
+      </li>
+    </template>
+    <script>
+      /* ここに解答を追記 */
+      /* Todoアイテムを追加する関数 */
+      function createTodoItem(title) {
+        /* テンプレートから要素を取得 */
+        const template = document.getElementById("todo-item-tmpl");
+        const todoTitle = template.content.querySelector(".todo-title");
+
+        todoTitle.textContent = title; // タイトルを設定
+
+        /* #todo-listの末尾に#todo-itemを追加する */
+        const todoList = document.getElementById("todo-list");
+        const todoItem = document.querySelector(".todo-item").cloneNode(true); // #todo-itemのクローンを作成
+
+        todoList.appendChild(todoItem); // #todo-listの末尾に追加
+      }
+
+      /* Todoアイテムを削除する関数 */
+      function deleteTodoItem() {
+        setTimeout(() => {
+          const todoItem = document.querySelector(".todo-item");
+          todoItem.remove(); // Todoアイテムを削除
+        }, 1000); // 1秒後に削除
+      }
+
+      /* Todoアイテムを完了にする関数 */
+      function completeTodoItem() {
+        const todoItem = document.querySelector(".todo-item");
+        todoItem.classList.add("completed"); // completedクラスを追加
+      }
+    </script>
+  </body>
+</html>
