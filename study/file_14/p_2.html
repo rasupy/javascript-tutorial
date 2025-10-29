@@ -1,0 +1,28 @@
+<!-- 練習問題 -->
+<body>
+  <div id="target"></div>
+  <script>
+    /* ここに記述 */
+    const target = document.querySelector("#target");
+
+    target.onmouseenter = function (event) {
+      target.style.background = "red";
+    };
+    target.onmouseleave = function (event) {
+      target.style.background = "none";
+    };
+  </script>
+  <style>
+    /* 画面の見栄えを調節 */
+    div {
+      position: absolute;
+      border: 1px solid black;
+      width: 100px;
+      height: 100px;
+      margin: 20px;
+    }
+    body {
+      background-color: cornsilk;
+    }
+  </style>
+</body>

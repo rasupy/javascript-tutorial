@@ -1,0 +1,53 @@
+<!-- イベントリスナ 練習問題 -->
+<body>
+  <div id="container" data-mouseenter="purple" data-mouseleave="none">
+    <div id="target" data-mouseenter="green" data-mouseleave="none"></div>
+  </div>
+  <script>
+    /* ここに記述 */
+    const containerEl = document.querySelector("#container");
+    const targetEl = document.querySelector("#target");
+
+    // マウスカーソルの出入りで色が変わる
+    function containerColorChange(event) {
+      containerEl.style.background =
+        containerEl.getAttribute("data-mouseenter");
+    }
+    function targetColorChange(event) {
+      targetEl.style.background = targetEl.getAttribute("data-mouseenter");
+    }
+    function resetContainerColor(event) {
+      containerEl.style.background =
+        containerEl.getAttribute("data-mouseleave");
+    }
+    function resetTargetColor(event) {
+      targetEl.style.background = targetEl.getAttribute("data-mouseleave");
+    }
+
+    // アクション
+    containerEl.addEventListener("mouseenter", containerColorChange);
+    containerEl.addEventListener("mouseleave", resetContainerColor);
+    targetEl.addEventListener("mouseenter", targetColorChange);
+    targetEl.addEventListener("mouseleave", resetTargetColor);
+  </script>
+  <style>
+    /* スタイルの調節 */
+    #container,
+    #target {
+      position: absolute;
+      border: 1px solid black;
+      margin: 40px;
+    }
+    #target {
+      width: 120px;
+      height: 120px;
+    }
+    #container {
+      width: 200px;
+      height: 200px;
+    }
+    body {
+      background-color: cornsilk;
+    }
+  </style>
+</body>
