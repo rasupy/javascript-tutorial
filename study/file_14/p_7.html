@@ -1,0 +1,59 @@
+<!-- イベントの伝番: 練習問題 -->
+<body>
+  <div id="container">
+    <span>#container</span>
+    <div id="wrapper">
+      <span>#wrapper</span>
+      <div id="target"><span>#target</span></div>
+    </div>
+  </div>
+  <script>
+    /* ここに記述 */
+    // Elementオブジェクトを取得
+    const container = document.querySelector("#container");
+    const wrapper = document.querySelector("#wrapper");
+    const target = document.querySelector("#target");
+    let span = "";
+
+    // clickイベントの登録
+    container.addEventListener(
+      "click",
+      () => {
+        span = container.querySelector("span");
+        alert(`${span.textContent}のクリックイベントが発火しました。`);
+        console.log(`${span.textContent}のクリックイベントが発火しました。`);
+      },
+      { capture: true }
+    );
+
+    wrapper.addEventListener(
+      "click",
+      () => {
+        span = wrapper.querySelector("span");
+        alert(`${span.textContent}のクリックイベントが発火しました。`);
+        console.log(`${span.textContent}のクリックイベントが発火しました。`);
+      },
+      { capture: true }
+    );
+
+    target.addEventListener(
+      "click",
+      () => {
+        span = target.querySelector("span");
+        alert(`${span.textContent}のクリックイベントが発火しました。`);
+        console.log(`${span.textContent}のクリックイベントが発火しました。`);
+      },
+      { capture: true }
+    );
+  </script>
+  <style>
+    /* 画面の見栄えを調節 */
+    div {
+      margin: 10px;
+      border: 1px solid black;
+    }
+    body {
+      background-color: cornsilk;
+    }
+  </style>
+</body>
