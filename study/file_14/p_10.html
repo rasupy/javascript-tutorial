@@ -1,0 +1,21 @@
+<!-- 練習問題 -->
+<body>
+  <div></div>
+
+  <style>
+    body {
+      margin: 0;
+    }
+    div {
+      background: linear-gradient(#e66465, #9198e5);
+      height: 200vh;
+    }
+  </style>
+
+  <script>
+    function preventScroll(event) {
+      event.preventDefault();
+    }
+    document.addEventListener("wheel", preventScroll, { passive: true });
+  </script>
+</body>
